@@ -1,0 +1,208 @@
+
+.nav-menu a {
+    cursor: pointer;
+    font-weight: 500;
+    color: #fff;
+    transition: color 0.3s;
+    padding: 0.5rem 0;
+    text-decoration: none;
+}
+
+.nav-menu a:hover {
+    color: #ffd700;
+}
+
+/* Logo link styling */
+.nav-logo {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+/* Navigation Bar */
+.navbar {
+    background-color: #1a472a; /* Dark green */
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item {
+    cursor: pointer;
+    font-weight: 500;
+    color: #fff;
+    transition: color 0.3s;
+    padding: 0.5rem 0;
+}
+
+.nav-item:hover {
+    color: #ffd700; /* Gold highlight */
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+/* Navbar.css */
+
+.hero-logo2-container {
+    /* push logo to the left */
+    display: flex;
+    justify-content: center;  /* center horizontally */
+    margin-bottom: 20px;
+}
+
+
+.hero2-logo {
+    height: 40px; /* make logo big */
+    width: auto; /* keep proportions */
+}
+/* General navbar styling */
+.navbar {
+    background-color: darkblue;
+    color: white;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+/* Desktop menu */
+.nav-menu {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #f0a500;
+}
+
+/* Hamburger icon */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    z-index: 1100; /* above menu */
+    transition: transform 0.3s ease;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Animate into X when open */
+.nav-toggle.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.nav-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 55px; /* push below navbar */
+        right: -260px; /* hide off screen */
+        width: 250px;
+        background: rgba(26, 26, 26, 0.95); /* semi-transparent dark */
+        backdrop-filter: blur(6px);
+        flex-direction: column;
+        transition: right 0.3s ease-in-out;
+        padding: 10px 0;
+        box-shadow: -4px 0 12px rgba(0, 0, 0, 0.4);
+        z-index: 1100;
+        height: auto; /* only as tall as items */
+        border-radius: 0 0 0 10px; /* make it smoother */
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-item {
+        text-decoration: none;
+        color: #fff;
+        text-align:center;
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: background 0.3s, color 0.3s;
+    }
+
+    .nav-item:hover {
+        background: rgba(255, 215, 0, 0.1); /* soft gold highlight */
+        color: #ffd700; /* gold text on hover */
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+}
