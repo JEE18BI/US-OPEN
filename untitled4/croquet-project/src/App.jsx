@@ -3,8 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./pages/Footer.jsx";
-import SponsorBanner from "./pages/SponsorBanner";
-import NextYear from "./components/NextYear";
+
 import Home from "./pages/Home.jsx";
 import Gallery from "./pages/Gallery.jsx";
 import Players from "./pages/Players.jsx";
