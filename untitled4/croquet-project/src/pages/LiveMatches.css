@@ -1,5 +1,10 @@
 /* LiveMatches.css */
 
+.soon{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 150px;
+}
 /* Base Layout */
 .live-matches-page {
     padding: 1rem;

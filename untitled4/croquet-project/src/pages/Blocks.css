@@ -9,7 +9,11 @@
     --shadow: 0 6px 18px rgba(20,20,40,0.08);
     --shadow-hover: 0 18px 40px rgba(20,20,40,0.12);
 }
-
+.soon{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 150px;
+}
 .blocks-page{
     min-height:100vh;
     padding:48px 28px;
