@@ -2,13 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
-import bg1 from "../components/NCC1.png";
-import bg2 from "../components/NCC1.png";
-import bg3 from "../components/NCC1.png";
-import bg4 from "../components/NCC1.png";
-import bg5 from "../components/NCC1.png";
+import bg1 from "../components/NCC1.jpg";
 
-const backgroundImages = [bg1, bg2, bg3, bg4, bg5];
+
+const backgroundImages = [bg1];
 
 const Home = () => {
     const [currentBg, setCurrentBg] = useState(0);
