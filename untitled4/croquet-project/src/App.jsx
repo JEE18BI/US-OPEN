@@ -12,6 +12,7 @@ import Announcements from "./pages/Announcements.jsx";
 import Clubs from "./pages/Clubs.jsx";
 import LiveMatches from "./pages/LiveMatches.jsx";
 import TournamentDetails from "./pages/TournamentDetails.jsx";
+import ProAm from "./pages/ProAm";
 import ScrollToTop from "./pages/ScrollToTop.jsx";
 import Blocks from "./pages/Blocks.jsx";
 import "./App.css";
@@ -20,7 +21,7 @@ function App() {
     const location = useLocation();
 
     useEffect(() => {
-        document.title = "Egyptian Open 2025";
+        document.title = "US Open 2026";
     }, []);
 
     return (
@@ -32,8 +33,8 @@ function App() {
                 <AnimatePresence mode="wait">
                     <ScrollToTop />
                     <Routes location={location} key={location.pathname}>
-                        <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
-                        <Route path="/egyptianopen" element={<PageWrapper><Home /></PageWrapper>} />
+                        <Route path="/usopen" element={<PageWrapper><Home /></PageWrapper>} />
+                        <Route path="/usopen" element={<PageWrapper><Home /></PageWrapper>} />
 
                         <Route path="/clubs" element={<PageWrapper><Clubs /></PageWrapper>} />
                         <Route path="/blocks" element={<PageWrapper><Blocks /></PageWrapper>} />
@@ -44,7 +45,9 @@ function App() {
                         <Route path="/players" element={<PageWrapper><Players /></PageWrapper>} />
                         <Route path="/help" element={<PageWrapper><Help /></PageWrapper>} />
                         <Route path="/tournament-details" element={<PageWrapper><TournamentDetails /></PageWrapper>} />
+                        <Route path="/proam" element={<PageWrapper><ProAm /></PageWrapper>} />
                     </Routes>
+
                 </AnimatePresence>
             </main>
 

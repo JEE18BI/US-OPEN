@@ -107,13 +107,26 @@
     max-width: 1200px;
     margin: auto;
 }
-
 .nav-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;           /* space between logo and text */
+    font-weight: 700;
+    font-size: 1.2rem;
     color: white;
+    text-decoration: none;
 }
+
+.nav-logo-img {
+    height: 32px;       /* adjust as needed */
+    width: auto;
+}
+
+.nav-logo-text {
+    display: flex;
+    align-items: center;
+}
+
 
 /* Desktop menu */
 .nav-menu {

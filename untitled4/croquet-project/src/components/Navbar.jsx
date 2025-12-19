@@ -16,27 +16,40 @@ const Navbar = () => {
 
                 <Link to="/" className="nav-logo" onClick={closeMenu}>
 
-                    US Open
-                    <ReactCountryFlag
-                        countryCode="us"
-                        svg
-                        style={{
-                            width: "20px",
-                            height: "14px",
-                            marginLeft: "6px",
-                            verticalAlign: "middle",
-                        }}
-                    />
+                        <img
+                            src="/logo.png"     // <-- your logo path
+                            alt="US Open Logo"
+                            className="nav-logo-img"
+                        />
+
+
+
+                    <span className="nav-logo-text">
+        US Open
+        <ReactCountryFlag
+            countryCode="us"
+            svg
+            style={{
+                width: "20px",
+                height: "14px",
+                marginLeft: "6px",
+                verticalAlign: "middle",
+            }}
+        />
+    </span>
                 </Link>
 
-
+                    {/* Links */}
                 {/* Links */}
                 <div className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
-                    <Link to="/egyptianopen" className="nav-item" onClick={closeMenu}>
+                    <Link to="/usopen" className="nav-item" onClick={closeMenu}>
                         Home
                     </Link>
-                    <Link to="/clubs" className="nav-item" onClick={closeMenu}>
-                        Clubs
+                    <Link to="/tournament-details" className="nav-item" onClick={closeMenu}>
+                        US Open Details
+                    </Link>
+                    <Link to="/proam" className="nav-item" onClick={closeMenu}>
+                        ProAm Details
                     </Link>
                     <Link to="/players" className="nav-item" onClick={closeMenu}>
                         Players
@@ -47,16 +60,13 @@ const Navbar = () => {
                     <Link to="/matches" className="nav-item" onClick={closeMenu}>
                         Matches
                     </Link>
-                    <Link to="/announcements" className="nav-item" onClick={closeMenu}>
-                        Announcements
-                    </Link>
-                    <Link to="/gallery" className="nav-item" onClick={closeMenu}>
-                        Gallery
-                    </Link>
                     <Link to="/help" className="nav-item" onClick={closeMenu}>
                         Need Help?
                     </Link>
                 </div>
+
+
+
 
                 {/* Hamburger */}
                 <div
