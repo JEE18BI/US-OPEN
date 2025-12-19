@@ -33,7 +33,7 @@ function App() {
                 <AnimatePresence mode="wait">
                     <ScrollToTop />
                     <Routes location={location} key={location.pathname}>
-                        <Route path="/usopen" element={<PageWrapper><Home /></PageWrapper>} />
+                        <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
                         <Route path="/usopen" element={<PageWrapper><Home /></PageWrapper>} />
 
                         <Route path="/clubs" element={<PageWrapper><Clubs /></PageWrapper>} />
