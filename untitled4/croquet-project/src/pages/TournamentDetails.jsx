@@ -5,7 +5,7 @@ export default function TournamentDetails() {
     return (
         <section className="tournament-container">
             <h2 className="tournament-title">
-                🏆 2nd Annual US Open Golf Croquet – 2026
+                 2nd Annual US Open Golf Croquet – 2026
             </h2>
 
             <div className="tournament-grid">

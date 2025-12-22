@@ -13,42 +13,29 @@
 .app {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-dark);
-    overflow-x: hidden;
     background: var(--usa-gray);
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
 /* ================= HERO SECTION ================= */
-.hero-logo {
-    height: 100px;
-    width: auto;
-}
-
-.hero-logo-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
 .hero-section {
     position: relative;
     height: 80vh;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--usa-white);
+    overflow: hidden;
 }
 
-/* Background slides */
 .bg-slide {
     position: absolute;
     inset: 0;
     background-size: cover;
     background-position: center;
     opacity: 0;
-    /*transition: opacity 1.5s ease-in-out;*/
     z-index: 0;
 }
 
@@ -56,19 +43,6 @@
     opacity: 1;
     z-index: 1;
 }
-
-/*!* USA cinematic overlay *!*/
-/*.hero-section::before {*/
-/*    content: '';*/
-/*    position: absolute;*/
-/*    inset: 0;*/
-/*    background: linear-gradient(*/
-/*            135deg,*/
-/*            rgba(10, 31, 68, 0.75),*/
-/*            rgba(177, 18, 38, 0.55)*/
-/*    );*/
-/*    z-index: 1;*/
-/*}*/
 
 .hero-content {
     position: relative;
@@ -80,20 +54,115 @@
 
 .hero-content h2 {
     font-size: 3.2rem;
-    margin-bottom: 1rem;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
+    margin-bottom: 1rem;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    animation: fadeUp 1.2s ease-out forwards;
 }
 
-.hero-content p {
-    font-size: 1.4rem;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.85;
+    animation: fadeUp 1.6s ease-out forwards;
 }
 
-/* Buttons */
+/* ================= CONTENT SECTION ================= */
+.content-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.content-section h3 {
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--usa-navy);
+}
+
+.content-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-light);
+}
+
+/* ================= INFO CARDS ================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.info-card {
+    background: var(--usa-white);
+    padding: 2rem;
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+
+    /* very subtle shadow */
+    box-shadow: 0 8px 20px rgba(10, 31, 68, 0.08);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(10, 31, 68, 0.12);
+}
+
+/* American flag edge */
+.info-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(
+            to bottom,
+            var(--usa-navy) 0%,
+            var(--usa-navy) 33%,
+            var(--usa-red) 33%,
+            var(--usa-red) 66%,
+            var(--usa-blue) 66%,
+            var(--usa-blue) 100%
+    );
+}
+
+/* optional thin bottom line */
+.info-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: var(--usa-navy);
+    opacity: 0.15;
+}
+
+/* Typography */
+.info-card h4 {
+    font-size: 1.35rem;
+    margin-bottom: 0.6rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.info-card p {
+    color: black;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+
+/* ================= BUTTON ================= */
 .view-details-btn {
     background: linear-gradient(
             90deg,
@@ -106,9 +175,8 @@
     font-size: 1.1rem;
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-    margin-right: 10px;
 }
 
 .view-details-btn:hover {
@@ -116,168 +184,15 @@
     box-shadow: 0 8px 25px rgba(0,0,0,0.35);
 }
 
-/* ================= CONTENT SECTIONS ================= */
-.content-section {
-    padding: 5rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-}
-
-.content-section h3 {
-    font-size: 2.4rem;
-    margin-bottom: 1.5rem;
-    color: var(--usa-navy);
-    position: relative;
-    padding-bottom: 0.5rem;
-}
-
-/*.content-section h3::after {*/
-/*    content: '';*/
-/*    position: absolute;*/
-/*    bottom: 0;*/
-/*    left: 50%;*/
-/*    transform: translateX(-50%);*/
-/*    width: 80px;*/
-/*    height: 4px;*/
-/*    background: linear-gradient(*/
-/*            90deg,*/
-/*            var(--usa-red),*/
-/*            var(--usa-blue)*/
-/*    );*/
-/*    border-radius: 2px;*/
-/*}*/
-
-.content-section p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto;
-    color: black;
-}
-
-/* Dark USA section */
-.content-section.dark {
-    background: linear-gradient(
-            135deg,
-            var(--usa-navy),
-            var(--usa-blue)
-    );
-    color: var(--usa-white);
-    border-radius: 15px;
-    margin: 4rem auto;
-    padding: 4rem 2rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.content-section.dark h3,
-.content-section.dark p {
-    color: var(--usa-white);
-}
-
-.content-section.dark h3::after {
-    background: linear-gradient(
-            90deg,
-            var(--usa-red),
-            var(--usa-white)
-    );
-}
-
-/* ================= EXPERIENCES GRID ================= */
-.experiences-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.experience-card {
-    perspective: 1000px;
-    cursor: pointer;
-}
-
-.card-inner {
-    position: relative;
-    width: 100%;
-    height: 250px;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-
-.experience-card.flipped .card-inner {
-    transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Front */
-.card-front {
-    background: var(--usa-white);
-    color: var(--text-dark);
-    border-top: 6px solid var(--usa-blue);
-}
-
-/* Back */
-.card-back {
-    background: linear-gradient(
-            135deg,
-            var(--usa-red),
-            var(--usa-navy)
-    );
-    color: var(--usa-white);
-    transform: rotateY(180deg);
-}
-
-.card-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.card-content h4 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--usa-navy);
-}
-
-.card-back .subtitle {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    color: #f1f1f1;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
-}
-
-.card-back p {
-    font-size: 1rem;
-    line-height: 1.6;
-    max-width: 90%;
-    text-align: center;
-}
-
 /* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ================= RESPONSIVE ================= */
@@ -286,22 +201,15 @@
         font-size: 2.2rem;
     }
 
-    .hero-content p {
-        font-size: 1rem;
+    .content-section h3 {
+        font-size: 2rem;
     }
 
     .content-section {
         padding: 3rem 1.5rem;
     }
 
-    .content-section h3 {
-        font-size: 2rem;
-    }
-
-    .card-inner {
-        height: 200px;
-    }
-    .view-details-btn{
+    .view-details-btn {
         margin-bottom: 10px;
     }
 }

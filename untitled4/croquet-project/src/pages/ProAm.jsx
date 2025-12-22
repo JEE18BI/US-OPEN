@@ -4,7 +4,7 @@ import './ProAm.css';
 export default function ProAm() {
     return (
         <section className="proam-container">
-            <h2 className="proam-title">🤝 ProAm Doubles Fundraiser – 2026</h2>
+            <h2 className="proam-title"> ProAm Doubles Fundraiser – 2026</h2>
 
             <div className="proam-card">
                 <ul>

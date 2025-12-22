@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+
 import "./Home.css";
 
 import bg1 from "../components/NCC1.jpg";
@@ -47,33 +47,33 @@ const Home = () => {
 
                 <div className="hero-content">
                     <h2>US OPEN GC 2026</h2>
-
-                    {/*<button*/}
-                    {/*    className="view-details-btn"*/}
-                    {/*    onClick={() => navigate("/tournament-details")}*/}
-                    {/*>*/}
-                    {/*    US OPEN details*/}
-                    {/*</button>*/}
-                    {/*<button*/}
-                    {/*    className="view-details-btn"*/}
-                    {/*    onClick={() => navigate("/ProAm")}*/}
-                    {/*>*/}
-                    {/*    ProAm details*/}
-                    {/*</button>*/}
-
+                    <p className="hero-subtitle">
+                        National Croquet Center • West Palm Beach
+                    </p>
                 </div>
+
             </div>
 
             {/* ABOUT SECTION */}
 
 
-            <div className="content-section">
+            <div className="content-section cards">
+                <div className="info-card">
+                    <h4>📍 Location</h4>
+                    <p>National Croquet Center, West Palm Beach, Florida</p>
+                </div>
 
-                <h3>About US Open </h3>
-                <p>
-                    The Palm Beaches will host the second international US Open GC to be held at the National Croquet Center (NCC), which is run by the Croquet Foundation of America (CFA) in West Palm Beach, FL, USA.  The tournament runs from February 9, 2026 to February 14, 2026. The US Open GC tournament and the US Open GC ProAm the day before are part of the same event.
-                </p>
+                <div className="info-card">
+                    <h4>📅 Dates</h4>
+                    <p>February 9 – 14, 2026</p>
+                </div>
+
+                <div className="info-card">
+                    <h4>🏆 Events</h4>
+                    <p>US Open GC & ProAm Tournament</p>
+                </div>
             </div>
+
 
 
         </div>

@@ -1,270 +1,180 @@
 import React, { useEffect, useState } from "react";
 import Papa from "papaparse";
 import "./LiveMatches.css";
-import { playersData } from "./Players";
-import QualifyingStage from "./QualifyingBracket.jsx";
-import ChampionshipTree from "/MainChampionship.png"; // ⬅️ your tree photo
 
 export default function LiveMatches() {
-    // const [view, setView] = useState("main"); // "main" | "qualifying" | "tree" | "plate"
-    //
-    // const [matches, setMatches] = useState([]);
-    // const [groupedMatches, setGroupedMatches] = useState({});
-    // const [plateMatches, setPlateMatches] = useState({});
-    // const [activeBlock, setActiveBlock] = useState(null);
-    // const [activeDay, setActiveDay] = useState(null);
-    // const [isLoading, setIsLoading] = useState(true);
-    //
-    // const [searchTerm, setSearchTerm] = useState("");
-    // const [playerMap, setPlayerMap] = useState({});
-    // const [showPlayerPopup, setShowPlayerPopup] = useState(false);
-    // const [searchTriggered, setSearchTriggered] = useState(false);
-    //
-    // const allPlayers = playersData.flatMap((group) => group.players);
-    //
-    // // 🔹 fetch matches
-    // useEffect(() => {
-    //     setIsLoading(true);
-    //     const matchesUrl =
-    //         "https://docs.google.com/spreadsheets/d/e/2PACX-1vRhDPQMbmlkkE4JFNckSXuRsgzK7xUdC3lo-vCBjaPnJtV8-_yubNqvw7oXaSEVkPFRlw46yY5gpgcf/pub?output=csv";
-    //
-    //     Papa.parse(matchesUrl, {
-    //         download: true,
-    //         header: true,
-    //         skipEmptyLines: true,
-    //         transformHeader: (h) => h.trim(),
-    //         complete: (results) => {
-    //             const filtered = results.data.filter((row) => row.MATCH?.trim());
-    //             setMatches(filtered);
-    //             setIsLoading(false);
-    //
-    //             const tempPlayerMap = {};
-    //             filtered.forEach((row) => {
-    //                 const players = row.MATCH.split(",").map((p) => p.trim()).filter(Boolean);
-    //                 players.forEach((player) => {
-    //                     if (!tempPlayerMap[player]) tempPlayerMap[player] = [];
-    //                     tempPlayerMap[player].push({
-    //                         match: row.MATCH.trim(),
-    //                         court: row.COURT?.trim() || "No Court",
-    //                         time: row.TIME?.trim() || "",
-    //                         day: row.DAY?.trim() || "Unknown Day",
-    //                         block: row.BLOCK?.trim() || "No Block",
-    //                     });
-    //                 });
-    //             });
-    //             setPlayerMap(tempPlayerMap);
-    //         },
-    //         error: (err) => {
-    //             console.error("CSV parse error:", err);
-    //             setIsLoading(false);
-    //         },
-    //     });
-    // }, []);
-    //
-    // // 🔹 group matches (main + plate separately)
-    // useEffect(() => {
-    //     const grouped = {};
-    //     const plateGrouped = {};
-    //
-    //     matches.forEach((item) => {
-    //         const block = item.BLOCK?.trim() || "No Block";
-    //         const day = item.DAY?.trim() || "Unknown Day";
-    //         const court = item.COURT?.trim() || "No Court";
-    //         const match = item.MATCH?.trim();
-    //         const score = item.SCORE?.trim() || "";
-    //         if (!match) return;
-    //
-    //         const isPlate = block.toLowerCase().includes("plate");
-    //
-    //         const target = isPlate ? plateGrouped : grouped;
-    //
-    //         target[block] = target[block] || {};
-    //         target[block][day] = target[block][day] || [];
-    //         const isFirstOnCourt = target[block][day].every((m) => m.court !== court);
-    //
-    //         target[block][day].push({
-    //             match,
-    //             time: isFirstOnCourt ? item.TIME?.trim() || "Start" : item.TIME,
-    //             court,
-    //             block,
-    //             day,
-    //             score,
-    //         });
-    //     });
-    //
-    //     const sortGrouped = (data) =>
-    //         Object.keys(data)
-    //             .sort()
-    //             .reduce((acc, block) => {
-    //                 acc[block] = Object.keys(data[block])
-    //                     .sort()
-    //                     .reduce((dAcc, day) => {
-    //                         dAcc[day] = data[block][day];
-    //                         return dAcc;
-    //                     }, {});
-    //                 return acc;
-    //             }, {});
-    //
-    //     setGroupedMatches(sortGrouped(grouped));
-    //     setPlateMatches(sortGrouped(plateGrouped));
-    // }, [matches]);
-    //
-    // if (isLoading)
-    //     return (
-    //         <div className="live-matches-page">
-    //             <div className="loader-overlay">
-    //                 <div className="loader-spinner"></div>
-    //             </div>
-    //         </div>
-    //     );
+    const [matches, setMatches] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
-     // 🔹 reusable block/day/match renderer
-    // const renderGroupedMatches = (grouped) => (
-    //     <>
-    //         {Object.entries(grouped).length === 0 && (
-    //             <div className="no-matches">No matches found.</div>
-    //         )}
-    //
-    //         {Object.entries(grouped).map(([block, days]) => (
-    //             <div key={block} className="block-wrapper">
-    //                 <div
-    //                     className={`block-header ${activeBlock === block ? "active" : ""}`}
-    //                     onClick={() => {
-    //                         setActiveBlock(activeBlock === block ? null : block);
-    //                         setActiveDay(null);
-    //                     }}
-    //                 >
-    //                     <span>{` ${block}`}</span>
-    //                     <span className="toggle-icon">
-    //                         {activeBlock === block ? "−" : "+"}
-    //                     </span>
-    //                 </div>
-    //
-    //                 <div
-    //                     className={`block-content ${activeBlock === block ? "open" : ""}`}
-    //                 >
-    //                     {Object.entries(days).map(([day, matchesArr]) => (
-    //                         <div key={day} className="day-wrapper">
-    //                             <div
-    //                                 className={`day-header ${
-    //                                     activeDay === `${block}-${day}` ? "active" : ""
-    //                                 }`}
-    //                                 onClick={() =>
-    //                                     setActiveDay(
-    //                                         activeDay === `${block}-${day}`
-    //                                             ? null
-    //                                             : `${block}-${day}`
-    //                                     )
-    //                                 }
-    //                             >
-    //                                 <span>{`Day ${day}`}</span>
-    //                                 <span className="toggle-icon">
-    //                                     {activeDay === `${block}-${day}` ? "−" : "+"}
-    //                                 </span>
-    //                             </div>
-    //                             <div
-    //                                 className={`day-content ${
-    //                                     activeDay === `${block}-${day}` ? "open" : ""
-    //                                 }`}
-    //                             >
-    //                                 {activeDay === `${block}-${day}` && (
-    //                                     <div className="matches-scroll">
-    //                                         <table className="matches-table">
-    //                                             <thead>
-    //                                             <tr>
-    //                                                 <th>Time</th>
-    //                                                 <th>Match</th>
-    //                                                 <th>Court</th>
-    //                                                 <th>Score</th>
-    //                                             </tr>
-    //                                             </thead>
-    //                                             <tbody>
-    //                                             {matchesArr.map((m, i) => (
-    //                                                 <tr key={`${block}-${day}-${i}`}>
-    //                                                     <td>{m.time}</td>
-    //                                                     <td>{m.match}</td>
-    //                                                     <td>{m.court}</td>
-    //                                                     <td>{m.score}</td>
-    //                                                 </tr>
-    //                                             ))}
-    //                                             </tbody>
-    //                                         </table>
-    //                                     </div>
-    //                                 )}
-    //                             </div>
-    //                         </div>
-    //                     ))}
-    //                 </div>
-    //             </div>
-    //         ))}
-    //     </>
-    // );
+    const [matchType, setMatchType] = useState("");
+    const [selectedBlock, setSelectedBlock] = useState("");
+    const [selectedDay, setSelectedDay] = useState("");
+    const [searchTerm, setSearchTerm] = useState("");
+
+    // Fetch CSV
+    useEffect(() => {
+        setIsLoading(true);
+        const url =
+            "https://docs.google.com/spreadsheets/d/e/2PACX-1vSg6N83JtidM2JSwQt_L7b3Qx6oCa00MmvKk6QbRvHEc7x2_ocHkfFH31gQ7RDnwNgGBBh8A9k-yjGa/pub?output=csv";
+
+        Papa.parse(url, {
+            download: true,
+            header: true,
+            skipEmptyLines: true,
+            transformHeader: (h) => h.trim(),
+            complete: (results) => {
+                const filtered = results.data.filter((row) => row["MATCH PLAYERS"]?.trim());
+                setMatches(filtered);
+                setIsLoading(false);
+            },
+            error: (err) => {
+                console.error("CSV parse error:", err);
+                setIsLoading(false);
+            },
+        });
+    }, []);
+
+    if (isLoading) return <div className="loader-spinner">Loading...</div>;
+
+    // Dropdown options
+    const matchTypes = Array.from(new Set(matches.map((m) => m["MATCH TYPE"])));
+    const blocks = matchType
+        ? Array.from(
+            new Set(
+                matches
+                    .filter((m) => m["MATCH TYPE"] === matchType)
+                    .map((m) => m["BLOCK / ROUND"])
+            )
+        )
+        : [];
+    const days =
+        matchType && selectedBlock
+            ? Array.from(
+                new Set(
+                    matches
+                        .filter(
+                            (m) => m["MATCH TYPE"] === matchType && m["BLOCK / ROUND"] === selectedBlock
+                        )
+                        .map((m) => m.DAY)
+                )
+            )
+            : [];
+
+    // Filtered matches: only filter if searchTerm or dropdowns selected
+    const filteredMatches =
+        searchTerm || matchType || selectedBlock || selectedDay
+            ? matches
+                .filter((m) =>
+                    m["MATCH PLAYERS"].toLowerCase().includes(searchTerm.toLowerCase())
+                )
+                .filter((m) => (matchType ? m["MATCH TYPE"] === matchType : true))
+                .filter((m) => (selectedBlock ? m["BLOCK / ROUND"] === selectedBlock : true))
+                .filter((m) => (selectedDay ? m.DAY === selectedDay : true))
+            : [];
 
     return (
-        <div>
-            <p className="soon">
-                Will be announced soon
-            </p>
+        <div className="live-matches-page">
+            <div className="matches-header">
+                <h1>Matches</h1>
+                <p>You can write your name to view your matches only</p>
+                <p>Or select from the drop down below to filter</p>
+
+                {/* Search input */}
+                <input
+                    type="text"
+                    placeholder="Search by player name"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="match-search-input"
+                />
+
+                {/* Dropdowns */}
+                <div className="view-dropdowns">
+                    <select
+                        value={matchType}
+                        onChange={(e) => {
+                            setMatchType(e.target.value);
+                            setSelectedBlock("");
+                            setSelectedDay("");
+                        }}
+                    >
+                        <option value="">Select Match Type</option>
+                        {matchTypes.map((mt) => (
+                            <option key={mt} value={mt}>
+                                {mt}
+                            </option>
+                        ))}
+                    </select>
+
+                    {blocks.length > 0 && (
+                        <select
+                            value={selectedBlock}
+                            onChange={(e) => {
+                                setSelectedBlock(e.target.value);
+                                setSelectedDay("");
+                            }}
+                        >
+                            <option value="">Select Block / Round</option>
+                            {blocks.map((b) => (
+                                <option key={b} value={b}>
+                                    {b}
+                                </option>
+                            ))}
+                        </select>
+                    )}
+
+                    {days.length > 0 && (
+                        <select
+                            value={selectedDay}
+                            onChange={(e) => setSelectedDay(e.target.value)}
+                        >
+                            <option value="">Select Day</option>
+                            {days.map((d) => (
+                                <option key={d} value={d}>
+                                    {d}
+                                </option>
+                            ))}
+                        </select>
+                    )}
+                </div>
+            </div>
+
+            {/* Matches table */}
+            {filteredMatches.length > 0 ? (
+                <div className="matches-scroll">
+                    <table className="matches-table">
+                        <thead>
+                        <tr>
+                            <th>Match Type</th>
+                            <th>Block / Round</th>
+                            <th>Day</th>
+                            <th>Time</th>
+                            <th>Court</th>
+                            <th>Match Players</th>
+                            <th>Score</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {filteredMatches.map((m, i) => (
+                            <tr key={i}>
+                                <td data-label="Match Type"><span>{m["MATCH TYPE"]}</span></td>
+                                <td data-label="Block / Round"><span>{m["BLOCK / ROUND"]}</span></td>
+                                <td data-label="Day"><span>{m.DAY}</span></td>
+                                <td data-label="Time"><span>{m.TIME}</span></td>
+                                <td data-label="Court"><span>{m.COURT}</span></td>
+                                <td data-label="Match Players"><span>{m["MATCH PLAYERS"]}</span></td>
+                                <td data-label="Score"><span>{m.SCORE}</span></td>
+                            </tr>
+                        ))}
+                        </tbody>
+                    </table>
+                </div>
+
+            ) : searchTerm || matchType || selectedBlock || selectedDay ? (
+                <p className="no-matches">No matches found for your search or filters.</p>
+            ) : (
+                <p className="no-matches">Please select a match type, block/round, day, or search for a player to view matches.</p>
+            )}
         </div>
-        // <div className="live-matches-page">
-        //     <div className="matches-header">
-        //         <h1>Matches</h1>
-        //         <p>You can find full scores on croquet scores :  </p>
-        //         <a
-        //             href="https://croquetscores.com/2025/gc/the-20-th-egyptian-open-golf-croquet-international-championahip"
-        //             target="_blank"
-        //             rel="noopener noreferrer"
-        //         >
-        //             The 20th Egyptian Open Golf Croquet Championship
-        //         </a>
-        //
-        //         <p>Check the schedule and search for your match</p>
-        //
-        //         {/* 🔹 VIEW TOGGLE BUTTONS */}
-        //         <div className="view-toggle">
-        //             <button
-        //                 className={view === "main" ? "active" : ""}
-        //                 onClick={() => setView("main")}
-        //             >
-        //                 Main Matches
-        //             </button>
-        //             <button
-        //                 className={view === "qualifying" ? "active" : ""}
-        //                 onClick={() => setView("qualifying")}
-        //             >
-        //                 Qualifying Stage
-        //             </button>
-        //             <button
-        //                 className={view === "tree" ? "active" : ""}
-        //                 onClick={() => setView("tree")}
-        //             >
-        //                 Championship Tree
-        //             </button>
-        //             <button
-        //                 className={view === "plate" ? "active" : ""}
-        //                 onClick={() => setView("plate")}
-        //             >
-        //                 Plate Matches
-        //             </button>
-        //         </div>
-        //     </div>
-        //
-        //     {/* 🔹 CONDITIONAL RENDER */}
-        //     {view === "qualifying" ? (
-        //         <QualifyingStage />
-        //     ) : view === "tree" ? (
-        //         <div className="championship-tree-container">
-        //             <img
-        //                 src={ChampionshipTree}
-        //                 alt="Championship Bracket Tree"
-        //                 className="championship-tree"
-        //             />
-        //         </div>
-        //     ) : view === "plate" ? (
-        //         renderGroupedMatches(plateMatches)
-        //     ) : (
-        //         renderGroupedMatches(groupedMatches)
-        //     )}
-        // </div>
     );
 }
