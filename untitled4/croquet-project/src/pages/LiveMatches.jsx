@@ -135,6 +135,7 @@ export default function LiveMatches() {
                             ))}
                         </select>
                     )}
+                    <p className="scroll">Scroll to see all matches</p>
                 </div>
             </div>
 
@@ -171,6 +172,7 @@ export default function LiveMatches() {
                     </div>
                     {/* This div creates the white fade effect on mobile */}
                     <div className="scroll-gradient-overlay"></div>
+
                 </div>
             ) : searchTerm || matchType || selectedBlock || selectedDay ? (
                 <p className="no-matches">No matches found for your search or filters.</p>
