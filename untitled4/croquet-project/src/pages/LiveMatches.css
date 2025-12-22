@@ -366,7 +366,7 @@
 .select{
     text-align: center;
 }
-/* Mobile hint for scrollable matches */
+/* Scrollable Matches - Mobile Scroll Hint */
 @media (max-width: 480px) {
     .matches-scroll {
         max-height: 300px;
@@ -377,19 +377,18 @@
         background: white;
     }
 
-    /* Bottom gradient to indicate more content */
-    .matches-scroll::after {
+    /* Add a gradient overlay inside the scrollable container */
+    .matches-scroll::before {
         content: '';
-        position: absolute;
+        position: sticky;
         bottom: 0;
-        left: 0;
-        width: 100%;
+        display: block;
         height: 40px;
+        width: 100%;
         pointer-events: none;
         background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
     }
 
-    /* Optional: make scrollbar more visible on mobile */
     .matches-scroll::-webkit-scrollbar {
         width: 10px;
     }
