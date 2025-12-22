@@ -76,8 +76,7 @@ export default function LiveMatches() {
         <div className="live-matches-page">
             <div className="matches-header">
                 <h1>Matches</h1>
-                <p>You can write your name to view your matches only</p>
-                <p>Or select from the drop down below to filter</p>
+
 
                 {/* Search input */}
                 <input

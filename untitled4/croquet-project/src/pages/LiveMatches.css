@@ -276,16 +276,8 @@
         font-size: 0.85rem;
     }
 
-    .matches-table,
-    .matches-table thead,
-    .matches-table tbody,
-    .matches-table th,
-    .matches-table td,
-    .matches-table tr {
-        display: block;
-        width: 100%;
-    }
-    @media (max-width: 480px) {
+
+
         .matches-table,
         .matches-table thead,
         .matches-table tbody,
@@ -361,13 +353,16 @@
             margin: 10px auto;
         }
 
-        .view-dropdown select,
-        .block-day-dropdowns select {
-            width: 100%;
-            min-width: unset;
-        }
+    .view-dropdown select,
+    .block-day-dropdowns select {
+        width: 100%;
+        font-size: 16px;       /* slightly bigger font */
+        padding: 12px 18px;    /* more padding for touch */
+        border-radius: 14px;   /* smoother edges */
+        min-width: unset;
+    }
     }
 
 .select{
     text-align: center;
-}}
+}
