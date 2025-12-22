@@ -140,35 +140,38 @@ export default function LiveMatches() {
 
             {/* Matches table */}
             {filteredMatches.length > 0 ? (
-                <div className="matches-scroll">
-                    <table className="matches-table">
-                        <thead>
-                        <tr>
-                            <th>Match Type</th>
-                            <th>Block / Round</th>
-                            <th>Day</th>
-                            <th>Time</th>
-                            <th>Court</th>
-                            <th>Match Players</th>
-                            <th>Score</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {filteredMatches.map((m, i) => (
-                            <tr key={i}>
-                                <td data-label="Match Type"><span>{m["MATCH TYPE"]}</span></td>
-                                <td data-label="Block / Round"><span>{m["BLOCK / ROUND"]}</span></td>
-                                <td data-label="Day"><span>{m.DAY}</span></td>
-                                <td data-label="Time"><span>{m.TIME}</span></td>
-                                <td data-label="Court"><span>{m.COURT}</span></td>
-                                <td data-label="Match Players"><span>{m["MATCH PLAYERS"]}</span></td>
-                                <td data-label="Score"><span>{m.SCORE}</span></td>
+                <div className="table-wrapper">
+                    <div className="matches-scroll">
+                        <table className="matches-table">
+                            <thead>
+                            <tr>
+                                <th>Match Type</th>
+                                <th>Block / Round</th>
+                                <th>Day</th>
+                                <th>Time</th>
+                                <th>Court</th>
+                                <th>Match Players</th>
+                                <th>Score</th>
                             </tr>
-                        ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            {filteredMatches.map((m, i) => (
+                                <tr key={i}>
+                                    <td data-label="Match Type"><span>{m["MATCH TYPE"]}</span></td>
+                                    <td data-label="Block / Round"><span>{m["BLOCK / ROUND"]}</span></td>
+                                    <td data-label="Day"><span>{m.DAY}</span></td>
+                                    <td data-label="Time"><span>{m.TIME}</span></td>
+                                    <td data-label="Court"><span>{m.COURT}</span></td>
+                                    <td data-label="Match Players"><span>{m["MATCH PLAYERS"]}</span></td>
+                                    <td data-label="Score"><span>{m.SCORE}</span></td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
+                    </div>
+                    {/* This div creates the white fade effect on mobile */}
+                    <div className="scroll-gradient-overlay"></div>
                 </div>
-
             ) : searchTerm || matchType || selectedBlock || selectedDay ? (
                 <p className="no-matches">No matches found for your search or filters.</p>
             ) : (

@@ -368,7 +368,7 @@
 }
 /* Scrollable Matches - Mobile Scroll Hint */
 @media (max-width: 480px) {
-    .matches-scroll {
+     .matches-scroll {
         max-height: 300px;
         overflow-y: auto;
         position: relative;
