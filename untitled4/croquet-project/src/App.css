@@ -4,6 +4,8 @@
     --text-dark: #222;
     --text-light: #fff;
     --bg-light: #f9f9f9;
+    --usa-gray: #09295c;
+
 }
 
 * {
@@ -14,7 +16,7 @@
 
 body {
     font-family: "Arial", sans-serif;
-    background: var(--bg-light);
+    background:var(--usa-gray) ;
     color: var(--text-dark);
     line-height: 1.6;
     padding-bottom: 40px;

@@ -4,7 +4,7 @@
     margin: 0 auto;
     padding: 3rem 2rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f9f9f9;
+    background: var(--usa-gray);
     min-height: 100vh;
     position: relative;
 }
@@ -14,7 +14,7 @@
     text-align: center;
     font-size: 2.8rem;
     margin-bottom: 2.5rem;
-    color: #2c3e50;
+    color: white;
     position: relative;
     padding-bottom: 1rem;
     text-transform: uppercase;
@@ -35,7 +35,7 @@
 
 /* Card style with patriotic gradient border */
 .proam-card {
-    background: white;
+    background: #d0d4dd;
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
@@ -61,8 +61,9 @@
     line-height: 1.6;
     position: relative;
     padding-left: 2rem;
-    color: #34495e;
-    font-weight: 500;
+    color: black;
+    font-weight: bolder;
+   font-size: 1.2rem;
 }
 
 .proam-card li::before {
@@ -77,10 +78,10 @@
 /* Hotel Info Box */
 .hotel-info {
     text-align: center;
-    background: linear-gradient(135deg, #e74c3c 0%, #3498db 100%);
+    background: #d0d4dd;
     padding: 1.8rem;
     border-radius: 12px;
-    color: white;
+    color: black;
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     margin-top: 2rem;
 }

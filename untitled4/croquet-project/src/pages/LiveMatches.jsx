@@ -74,111 +74,112 @@ export default function LiveMatches() {
 
     return (
         <div className="live-matches-page">
-            <div className="matches-header">
-                <h1>Matches</h1>
+            <h1 className="Matches">Matches</h1>
+            {/* ===== FILTER / CONTROLS SECTION ===== */}
+            <div className="matches-controls">
+                <div className="matches-header">
 
 
-                {/* Search input */}
-                <input
-                    type="text"
-                    placeholder="Search by player name"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="match-search-input"
-                />
+                    <input
+                        type="text"
+                        placeholder="Search by player name"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="match-search-input"
+                    />
 
-                {/* Dropdowns */}
-                <div className="view-dropdowns">
-                    <select
-                        value={matchType}
-                        onChange={(e) => {
-                            setMatchType(e.target.value);
-                            setSelectedBlock("");
-                            setSelectedDay("");
-                        }}
-                    >
-                        <option value="">Select Match Type</option>
-                        {matchTypes.map((mt) => (
-                            <option key={mt} value={mt}>
-                                {mt}
-                            </option>
-                        ))}
-                    </select>
+                    <p className="Search">
+                        Write player's name to view only player's matches or use drop-down filtering below
+                    </p>
 
-                    {blocks.length > 0 && (
+                    <p className="scroll">Scroll to see all matches</p>
+
+                    <div className="view-dropdowns">
                         <select
-                            value={selectedBlock}
+                            value={matchType}
                             onChange={(e) => {
-                                setSelectedBlock(e.target.value);
+                                setMatchType(e.target.value);
+                                setSelectedBlock("");
                                 setSelectedDay("");
                             }}
                         >
-                            <option value="">Select Block / Round</option>
-                            {blocks.map((b) => (
-                                <option key={b} value={b}>
-                                    {b}
-                                </option>
+                            <option value="">Select Match Type</option>
+                            {matchTypes.map((mt) => (
+                                <option key={mt} value={mt}>{mt}</option>
                             ))}
                         </select>
-                    )}
 
-                    {days.length > 0 && (
-                        <select
-                            value={selectedDay}
-                            onChange={(e) => setSelectedDay(e.target.value)}
-                        >
-                            <option value="">Select Day</option>
-                            {days.map((d) => (
-                                <option key={d} value={d}>
-                                    {d}
-                                </option>
-                            ))}
-                        </select>
-                    )}
-                    <p className="scroll">Scroll to see all matches</p>
+                        {blocks.length > 0 && (
+                            <select
+                                value={selectedBlock}
+                                onChange={(e) => {
+                                    setSelectedBlock(e.target.value);
+                                    setSelectedDay("");
+                                }}
+                            >
+                                <option value="">Select Block / Round</option>
+                                {blocks.map((b) => (
+                                    <option key={b} value={b}>{b}</option>
+                                ))}
+                            </select>
+                        )}
+
+                        {days.length > 0 && (
+                            <select
+                                value={selectedDay}
+                                onChange={(e) => setSelectedDay(e.target.value)}
+                            >
+                                <option value="">Select Day</option>
+                                {days.map((d) => (
+                                    <option key={d} value={d}>{d}</option>
+                                ))}
+                            </select>
+                        )}
+                    </div>
                 </div>
             </div>
 
-            {/* Matches table */}
-            {filteredMatches.length > 0 ? (
-                <div className="table-wrapper">
-                    <div className="matches-scroll">
-                        <table className="matches-table">
-                            <thead>
-                            <tr>
-                                <th>Match Type</th>
-                                <th>Block / Round</th>
-                                <th>Day</th>
-                                <th>Time</th>
-                                <th>Court</th>
-                                <th>Match Players</th>
-                                <th>Score</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {filteredMatches.map((m, i) => (
-                                <tr key={i}>
-                                    <td data-label="Match Type"><span>{m["MATCH TYPE"]}</span></td>
-                                    <td data-label="Block / Round"><span>{m["BLOCK / ROUND"]}</span></td>
-                                    <td data-label="Day"><span>{m.DAY}</span></td>
-                                    <td data-label="Time"><span>{m.TIME}</span></td>
-                                    <td data-label="Court"><span>{m.COURT}</span></td>
-                                    <td data-label="Match Players"><span>{m["MATCH PLAYERS"]}</span></td>
-                                    <td data-label="Score"><span>{m.SCORE}</span></td>
+            {/* ===== MATCHES TABLE SECTION ===== */}
+            <div className="matches-results">
+                {filteredMatches.length > 0 ? (
+                    <div className="table-wrapper">
+                        <div className="matches-scroll">
+                            <table className="matches-table">
+                                <thead>
+                                <tr>
+                                    <th>Match Type</th>
+                                    <th>Block / Round</th>
+                                    <th>Day</th>
+                                    <th>Time</th>
+                                    <th>Court</th>
+                                    <th>Match Players</th>
+                                    <th>Score</th>
                                 </tr>
-                            ))}
-                            </tbody>
-                        </table>
-                    </div>
-                    {/* This div creates the white fade effect on mobile */}
-                    <div className="scroll-gradient-overlay"></div>
+                                </thead>
+                                <tbody>
+                                {filteredMatches.map((m, i) => (
+                                    <tr key={i}>
+                                        <td data-label="Match Type"><span>{m["MATCH TYPE"]}</span></td>
+                                        <td data-label="Block / Round"><span>{m["BLOCK / ROUND"]}</span></td>
+                                        <td data-label="Day"><span>{m.DAY}</span></td>
+                                        <td data-label="Time"><span>{m.TIME}</span></td>
+                                        <td data-label="Court"><span>{m.COURT}</span></td>
+                                        <td data-label="Match Players"><span>{m["MATCH PLAYERS"]}</span></td>
+                                        <td data-label="Score"><span>{m.SCORE}</span></td>
+                                    </tr>
+                                ))}
+                                </tbody>
+                            </table>
+                        </div>
 
-                </div>
-            ) : searchTerm || matchType || selectedBlock || selectedDay ? (
-                <p className="no-matches">No matches found for your search or filters.</p>
-            ) : (
-                <p className="no-matches">Please select a match type, block/round, day, or search for a player to view matches.</p>
-            )}
+                        <div className="scroll-gradient-overlay"></div>
+                    </div>
+                ) : searchTerm || matchType || selectedBlock || selectedDay ? (
+                    <p className="no-matches">No matches found for your search or filters.</p>
+                ) : null}
+            </div>
+
         </div>
     );
+
 }

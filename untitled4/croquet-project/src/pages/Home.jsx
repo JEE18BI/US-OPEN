@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 import "./Home.css";
 
 import bg1 from "../components/NCC1.jpg";
+import bg2 from "/Ncc2.png";
+import bg3 from "/Ncc3.png";
 
 
-const backgroundImages = [bg1];
+const backgroundImages = [bg1,bg2,bg3];
 
 const Home = () => {
     const [currentBg, setCurrentBg] = useState(0);

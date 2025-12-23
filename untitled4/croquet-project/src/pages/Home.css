@@ -29,7 +29,7 @@
     color: var(--usa-white);
     overflow: hidden;
 }
-
+/* ================= HERO BACKGROUND SLIDES ================= */
 .bg-slide {
     position: absolute;
     inset: 0;
@@ -37,11 +37,17 @@
     background-position: center;
     opacity: 0;
     z-index: 0;
+
+    transform: scale(1.05);
+    transition:
+            opacity 1.2s ease-in-out,
+            transform 6s ease-out;
 }
 
 .bg-slide.active {
     opacity: 1;
     z-index: 1;
+    transform: scale(1);
 }
 
 .hero-content {
@@ -93,21 +99,21 @@
 /* ================= INFO CARDS ================= */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 3rem;
 }
-
 .info-card {
-    background: var(--usa-white);
+    background: #d0d4dd;
     padding: 2rem;
     border-radius: 14px;
     position: relative;
     overflow: hidden;
+    color: white;
 
-    /* very subtle shadow */
+    /* remove fixed width */
+    width: 100%;
     box-shadow: 0 8px 20px rgba(10, 31, 68, 0.08);
-
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -213,3 +219,21 @@
         margin-bottom: 10px;
     }
 }
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* Info cards responsive stacking */
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr; /* single column */
+        gap: 1.5rem; /* spacing between stacked cards */
+        margin-top: 2rem;
+    }
+
+    .info-card {
+        width: 100%; /* make sure each card uses full width */
+    }
+}
+

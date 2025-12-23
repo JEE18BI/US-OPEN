@@ -2,9 +2,10 @@
 .players-page {
     padding: 2rem;
     font-family: 'Poppins', sans-serif;
-    color: #1e3a8a;
+    color: white;
 
-    background:  white; /* dark background */
+    background: var(--usa-gray);
+    /* dark background */
 }
 
 /* === Header === */
@@ -12,7 +13,7 @@
     text-align: center;
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: white;
+    background: #d0d4dd;
 
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(75, 143, 74, 0.25);
@@ -99,7 +100,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: #1e3a8a;
+    color: white;
 
 }
 
