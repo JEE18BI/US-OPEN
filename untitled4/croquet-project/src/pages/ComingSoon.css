@@ -83,3 +83,23 @@
     letter-spacing: 0.05em;
     opacity: 0.9;
 }
+@media (max-width: 768px) {
+    .coming-soon-container {
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 5rem;
+    }
+
+    .coming-soon-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .coming-soon-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .coming-soon-text {
+        font-size: 1.05rem;
+    }
+}
+
