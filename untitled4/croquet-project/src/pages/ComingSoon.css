@@ -5,18 +5,16 @@
     min-height: 100vh;
     background: linear-gradient(
             135deg,
-            rgba(10, 35, 66, 0.95),
-            rgba(15, 60, 100, 0.95)
-    ),
-    url("/hero-bg.jpg"); /* optional later */
-    background-size: cover;
-    background-position: center;
+            rgba(10, 35, 66, 1),
+            rgba(15, 60, 100, 1)
+    );
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-family: "Inter", sans-serif;
 }
+
 
 .coming-soon-overlay {
     position: absolute;
