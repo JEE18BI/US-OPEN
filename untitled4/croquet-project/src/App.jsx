@@ -18,7 +18,7 @@ import ScrollToTop from "./pages/ScrollToTop.jsx";
 import Blocks from "./pages/Blocks.jsx";
 import "./App.css";
 
-
+//app
 function App() {
     const location = useLocation();
     const COMING_SOON = import.meta.env.VITE_COMING_SOON === "true";
