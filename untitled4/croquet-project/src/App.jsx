@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./pages/Footer.jsx";
+import ComingSoon from "./pages/ComingSoon.jsx";
 
 import Home from "./pages/Home.jsx";
 import Gallery from "./pages/Gallery.jsx";
@@ -19,10 +20,14 @@ import "./App.css";
 
 function App() {
     const location = useLocation();
+    const COMING_SOON = true;
 
     useEffect(() => {
         document.title = "US Open 2026";
     }, []);
+    if (COMING_SOON) {
+        return <ComingSoon />;
+    }
 
     return (
         <div className="app-layout">
