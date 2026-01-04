@@ -20,7 +20,8 @@ import "./App.css";
 
 function App() {
     const location = useLocation();
-    const COMING_SOON = true;
+    const COMING_SOON = import.meta.env.VITE_COMING_SOON === "true";
+
 
     useEffect(() => {
         document.title = "US Open 2026";
