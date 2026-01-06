@@ -261,11 +261,13 @@
 }
 @media (max-width: 768px) {
     .hero-logo {
-        height: 80px;
+        height: 100px;
+        margin-left:0;
+        margin-right: 0;
     }
 
     .hero-logos {
-        gap: 16px;
+          gap:0;
         margin-bottom: 1rem;
     }
     .hero-subtitle{
