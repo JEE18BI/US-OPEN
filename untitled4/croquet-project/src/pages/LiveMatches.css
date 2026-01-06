@@ -358,7 +358,7 @@
         .matches-table td::before {
             content: attr(data-label);
             font-weight: bold;
-            color: white;
+            color: #1e3a8a;
             flex: 0 0 120px; /* fixed width for label */
             text-align: left;
         }
