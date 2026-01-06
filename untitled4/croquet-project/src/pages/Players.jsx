@@ -147,9 +147,7 @@ export default function Players() {
                 </div>
             ))}
 
-            <div className="players-footer">
-                <p>90 talented players competing in the US Open 2026</p>
-            </div>
+
             {selectedPlayer && (
                 <div className="player-modal" onClick={() => setSelectedPlayer(null)}>
                     <span className="close-btn" onClick={() => setSelectedPlayer(null)}>&times;</span>
