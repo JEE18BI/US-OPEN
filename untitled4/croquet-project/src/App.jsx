@@ -10,7 +10,7 @@ import Gallery from "./pages/Gallery.jsx";
 import Players from "./pages/Players.jsx";
 import Help from "./pages/Help.jsx";
 import Announcements from "./pages/Announcements.jsx";
-import Clubs from "./pages/Clubs.jsx";
+
 import LiveMatches from "./pages/LiveMatches.jsx";
 import TournamentDetails from "./pages/TournamentDetails.jsx";
 import ProAm from "./pages/ProAm";
