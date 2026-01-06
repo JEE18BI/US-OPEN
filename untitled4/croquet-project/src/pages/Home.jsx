@@ -48,11 +48,29 @@ const Home = () => {
 
 
                 <div className="hero-content">
-                    <h2>US OPEN GC 2026</h2>
+
+                    {/* Logos */}
+                    <div className="hero-logos">
+                        <img
+                            src="/US_OPEN_GC_2026-Photoroom.png"
+                            alt="US Open GC 2026 Logo"
+                            className="hero-logo"
+                        />
+                        <img
+                            src="/US_OPEN_GC_ProAm2026-Photoroom.png"
+                            alt="US Open GC ProAm 2026 Logo"
+                            className="hero-logo"
+                        />
+                    </div>
+
+                    <h2>US OPEN GC & PROAM 2026</h2>
+
                     <p className="hero-subtitle">
                         National Croquet Center • West Palm Beach
                     </p>
+
                 </div>
+
 
             </div>
 

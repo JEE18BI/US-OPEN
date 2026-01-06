@@ -454,3 +454,28 @@ margin-bottom: 1rem;}
 .Matches{
     margin-bottom: 16px;
 }
+/* ================= MOBILE SCROLL HINT ================= */
+@media (max-width: 480px) {
+    .matches-scroll {
+        position: relative;
+        max-height: 300px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Gradient fade to indicate more content */
+    .matches-scroll::after {
+        content: "";
+        position: sticky;
+        bottom: 0;
+        display: block;
+        height: 48px;
+        width: 100%;
+        pointer-events: none;
+        background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0),
+                rgba(255, 255, 255, 0.95)
+        );
+    }
+}
