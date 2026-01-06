@@ -1,12 +1,22 @@
 import React from "react";
 import "./TournamentDetails.css";
+import { Link } from "react-router-dom";
+
 
 export default function TournamentDetails() {
+
     return (
         <section className="tournament-container">
             <h2 className="tournament-title">
                  2nd Annual US Open Golf Croquet – 2026
             </h2>
+            <div className="doubles-cta">
+
+                <Link to="/players" className="doubles">
+                    Check Players
+                </Link>
+
+        </div>
 
             <div className="tournament-grid">
                 {/* OVERVIEW */}

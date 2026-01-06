@@ -56,7 +56,7 @@ export default function Help() {
 
     return (
         <div className="help-page">
-            <p>Coming Soon</p>
+            <p className="Soon">Coming Soon</p>
             {/*/!* Header *!/*/}
             {/*<div className="help-header">*/}
             {/*    <div className="header-content">*/}

@@ -307,6 +307,32 @@
     background: #555;
 }
 
+
+/* underline accent */
+.doubles::after {
+    content: "";
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #b11226, #1e3a8a);
+    transform: translateX(-50%);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* hover */
+.doubles:hover {
+    transform: translateY(-3px);
+    box-shadow:
+            0 12px 30px rgba(0,0,0,0.35),
+            inset 0 0 0 1px rgba(255,255,255,0.25);
+}
+
+.doubles:hover::after {
+    width: 110px;
+}
 /* Responsive */
 @media (max-width: 768px) {
     .matches-table th, .matches-table td {

@@ -4,12 +4,16 @@
     max-width: 1000px;
     margin: 0 auto;
     min-height: 80vh;
-    background: white; /* dark background */
+    background: var(--usa-gray);/* dark background */
     color: #1e3a8a;
 
     font-family: 'Poppins', sans-serif;
 }
-
+.Soon{
+    color:white;
+    font-size: 30px;
+    text-align: center;
+}
 /* === Header === */
 .help-header {
     text-align: center;

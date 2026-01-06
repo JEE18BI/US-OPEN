@@ -32,6 +32,12 @@ export default function ProAm() {
     return (
         <section className="proam-container">
             <h2 className="proam-title"> ProAm Doubles Fundraiser – 2026</h2>
+            <div className="doubles-cta">
+                <a href="#hotel-info" className="doubles">
+                    Check Doubles
+                </a>
+            </div>
+
 
             <div className="proam-card">
                 <ul>
@@ -45,7 +51,7 @@ export default function ProAm() {
                 </ul>
             </div>
 
-            <div className="hotel-info">
+            <div id="hotel-info" className="hotel-info">
                 <h3>Doubles List</h3>
                 <div className="proam-table-wrapper">
                     <table className="proam-table">
