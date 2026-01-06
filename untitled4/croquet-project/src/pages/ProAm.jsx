@@ -33,9 +33,16 @@ export default function ProAm() {
         <section className="proam-container">
             <h2 className="proam-title"> ProAm Doubles Fundraiser – 2026</h2>
             <div className="doubles-cta">
-                <a href="#hotel-info" className="doubles">
+                <h3
+                    className="doubles"
+                    onClick={() => {
+                        document
+                            .getElementById("hotel-info")
+                            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }}
+                >
                     Check Doubles
-                </a>
+                </h3>
             </div>
 
 
