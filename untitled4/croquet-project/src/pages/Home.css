@@ -103,36 +103,37 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 3rem;
-}
+}/* ===== INFO CARDS – US OPEN STYLE ===== */
 .info-card {
-    background: #d0d4dd;
-    padding: 2rem;
-    border-radius: 14px;
     position: relative;
-    overflow: hidden;
+    background: linear-gradient(
+            180deg,
+            #0a1f44 0%,
+            #132f63 100%
+    );
     color: white;
-
-    /* remove fixed width */
-    width: 100%;
-    box-shadow: 0 8px 20px rgba(10, 31, 68, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 2.2rem 2rem;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .info-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(10, 31, 68, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
 }
 
-/* American flag edge */
+/* Red / Gold accent bar */
 .info-card::before {
     content: "";
     position: absolute;
-    left: 0;
     top: 0;
-    width: 5px;
-    height: 100%;
+    left: 0;
+    height: 5px;
+    width: 100%;
     background: linear-gradient(
-            to bottom,
+            to right,
             var(--usa-navy) 0%,
             var(--usa-navy) 33%,
             var(--usa-red) 33%,
@@ -142,32 +143,35 @@
     );
 }
 
-/* optional thin bottom line */
+/* Subtle texture overlay */
 .info-card::after {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    width: 100%;
-    background: var(--usa-navy);
-    opacity: 0.15;
+    inset: 0;
+    background: radial-gradient(
+            circle at top left,
+            rgba(255,255,255,0.08),
+            transparent 60%
+    );
+    pointer-events: none;
 }
 
-/* Typography */
+/* Title */
 .info-card h4 {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
+    font-weight: 700;
     margin-bottom: 0.6rem;
-    color: var(--text-dark);
-    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
+/* Text */
 .info-card p {
-    color: black;
+    font-size: 1.05rem;
     line-height: 1.6;
+    color: #f1f5ff;
     font-weight: 500;
 }
-
 
 /* ================= BUTTON ================= */
 .view-details-btn {
@@ -275,3 +279,79 @@
     }
 
 }
+/* ===== PAST WINNERS ===== */
+.winners-section {
+    background: #0a1f44;
+    padding: 5rem 2rem;
+}
+
+.winners-title {
+    text-align: center;
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.winners-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.winner-card {
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.winner-card:hover {
+    transform: scale(1.03);
+}
+
+.winner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            to top,
+            rgba(0,0,0,0.85),
+            rgba(0,0,0,0.25)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+
+.winner-category {
+    color: #ffd700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.winner-name {
+    color: white;
+    font-size: 1.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .winners-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .winner-card {
+        height: 300px;
+    }
+}
+

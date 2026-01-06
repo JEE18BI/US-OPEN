@@ -94,6 +94,53 @@ const Home = () => {
                     <p>US Open GC & ProAm Tournament</p>
                 </div>
             </div>
+            {/* PAST WINNERS SECTION */}
+            <section className="winners-section">
+                <h2 className="winners-title">Past Winners</h2>
+
+                <div className="winners-grid">
+                    <div
+                        className="winner-card"
+                        style={{ backgroundImage: "url(/championship.png)" }}
+                    >
+                        <div className="winner-overlay">
+                            <span className="winner-category">CHAMPIONSHIP</span>
+                            <h3 className="winner-name">Robert Fletcher</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        className="winner-card"
+                        style={{ backgroundImage: "url(/shield.png)" }}
+                    >
+                        <div className="winner-overlay">
+                            <span className="winner-category">SHIELD</span>
+                            <h3 className="winner-name">Tom Balding</h3>
+                        </div>
+                    </div>
+                    <div
+                        className="winner-card"
+                        style={{ backgroundImage: "url(bowl.png)" }}
+                    >
+                        <div className="winner-overlay">
+                            <span className="winner-category">BOWL</span>
+                            <h3 className="winner-name">Euan Burridge</h3>
+                        </div>
+                    </div>
+                    <div
+                        className="winner-card"
+                        style={{ backgroundImage: "url(/plate.png)" }}
+                    >
+                        <div className="winner-overlay">
+                            <span className="winner-category">PLATE</span>
+                            <h3 className="winner-name">Rafael Hernandez-Alcala</h3>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </section>
 
 
 
