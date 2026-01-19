@@ -1,35 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Home.css";
 
 const Home = () => {
-    const [loaded, setLoaded] = useState(false);
 
     return (
-        <div className="app">
+
+
+            <div className="app">
             {/* HERO SECTION */}
             <div className="hero-split-final">
-
                 {/* LEFT poster */}
-                <div className="hero-left-final hero-poster-container">
-                    {!loaded && <div className="poster-skeleton"></div>}
 
+                <div className="hero-left-final">
                     <img
                         src="/cover.webp"
                         alt="US Open GC Poster"
-                        className={`hero-poster-final ${loaded ? "loaded" : ""}`}
-                        onLoad={() => setLoaded(true)}
-                        decoding="async"
+                        className="hero-poster-final"
                     />
                 </div>
 
                 {/* RIGHT content */}
                 <div className="hero-right-final">
+
+
                     <h2 className="hero-title-final">US OPEN GC & PROAM 2026</h2>
 
                     <p className="hero-subtitle-final">
                         National Croquet Center • West Palm Beach
                     </p>
-
                     <div className="hero-logos-final">
                         <img
                             src="/US_OPEN_GC_2026-Photoroom.png"
@@ -42,6 +40,7 @@ const Home = () => {
                             className="hero-logo-final"
                         />
                     </div>
+
 
                     <div className="hero-links-final">
                         <a
@@ -74,8 +73,13 @@ const Home = () => {
                             <span className="hero-link-sub">US Open GC</span>
                         </a>
                     </div>
+
+
                 </div>
             </div>
+
+
+
 
             {/* PAST WINNERS SECTION */}
             <section className="winners-section">
@@ -125,6 +129,6 @@ const Home = () => {
             </section>
         </div>
     );
-};
+            };
 
 export default Home;
