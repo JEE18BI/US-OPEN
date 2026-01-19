@@ -130,7 +130,7 @@ export default function ProAm() {
             <div className="proam-card">
                 <ul>
                     <li>Date: Monday, February 9, 2026</li>
-                    <li>Top 24 D-Grades as of October 15 participate</li>
+                    <li>Top D-Grades as of October 15 participate</li>
                     <li>Each paired with 24 donors</li>
                     <li>4–5 Swiss-format doubles games per team</li>
                     <li>Beverages, lunch, reception & banquet included</li>

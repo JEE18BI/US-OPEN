@@ -36,7 +36,7 @@ export default function TournamentDetails() {
                     <ul>
                         <li>Players represent 9 different countries</li>
                         <li>#1 ranked players from 5 nations</li>
-                        <li>Two past World Champions in the field</li>
+                        <li>four past World Champions in the field</li>
                         <li>10 of the top 20 ranked GC players worldwide</li>
                         <li>4 of the current top 5 players in the world competing</li>
                     </ul>
