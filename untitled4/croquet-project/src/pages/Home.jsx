@@ -9,7 +9,7 @@ const Home = () => {
                 {/* LEFT poster */}
                 <div className="hero-left-final">
                     <img
-                        src="/cover.jpg"
+                        src="/cover.webp"
                         alt="US Open GC Poster"
                         className="hero-poster-final"
                     />
@@ -36,9 +36,7 @@ const Home = () => {
                             className="hero-logo-final"
                         />
                     </div>
-                    <p className="hero-subtitle-final">
-                        National Croquet Center • West Palm Beach
-                    </p>
+
 
                     <div className="hero-links-final">
                         <a
@@ -77,23 +75,7 @@ const Home = () => {
             </div>
 
 
-            {/* ABOUT SECTION */}
-            <div className="content-section cards">
-                <div className="info-card">
-                    <h4>📍 Location</h4>
-                    <p>National Croquet Center, West Palm Beach, Florida</p>
-                </div>
 
-                <div className="info-card">
-                    <h4>📅 Dates</h4>
-                    <p>February 9 – 14, 2026</p>
-                </div>
-
-                <div className="info-card">
-                    <h4>🏆 Events</h4>
-                    <p>US Open GC & ProAm Tournament</p>
-                </div>
-            </div>
 
             {/* PAST WINNERS SECTION */}
             <section className="winners-section">

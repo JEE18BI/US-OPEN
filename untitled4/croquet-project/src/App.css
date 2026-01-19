@@ -16,7 +16,7 @@
 }
 
 body {
-    font-family: var(--main-font);
+    font-family: var(--main-font), serif;
     background: var(--usa-gray);
     color: var(--text-dark);
     line-height: 1.6;
