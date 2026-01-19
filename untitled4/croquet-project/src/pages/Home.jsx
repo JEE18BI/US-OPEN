@@ -63,6 +63,7 @@ const Home = () => {
                             <span className="hero-link-sub">Manager’s Tournament</span>
                         </a>
 
+
                         <a
                             href="https://croquetscores.com/2026/gc/us-open"
                             target="_blank"
@@ -71,6 +72,15 @@ const Home = () => {
                         >
                             <span className="hero-link-title">Croquet Scores</span>
                             <span className="hero-link-sub">US Open GC</span>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@uscroquetassociation/streams"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hero-link-card"
+                        >
+                            <span className="hero-link-title">Youtube</span>
+                            <span className="hero-link-sub">Live streaming</span>
                         </a>
                     </div>
 
