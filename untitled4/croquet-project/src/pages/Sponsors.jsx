@@ -30,6 +30,7 @@ export default function Sponsors() {
         { name: "Trevor Head", type: "Gold", photo: "/sponsors/trevorhead.jpg" },
         { name: "W. David McCoy", type: "Gold", photo: "/sponsors/davidmccoy.jpg" },
         { name: "William (Bill) Kuhn", type: "Gold", photo: "/sponsors/billkuhn.jpg" },
+        {name: "Richard (Dick) Boger",type :"Gold", photo:"/sponsors/richardboger.jpg"},
 
         // ===== SILVER (NO photos) =====
         { name: "Deidre Myers", type: "Silver" },
