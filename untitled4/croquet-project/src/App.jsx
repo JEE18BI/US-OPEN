@@ -8,9 +8,9 @@ import ComingSoon from "./pages/ComingSoon.jsx";
 import Home from "./pages/Home.jsx";
 import Gallery from "./pages/Gallery.jsx";
 import Players from "./pages/Players.jsx";
-import Help from "./pages/Help.jsx";
-import Announcements from "./pages/Announcements.jsx";
 
+import Announcements from "./pages/Announcements.jsx";
+import Sponsors from "./pages/Sponsors.jsx";
 import LiveMatches from "./pages/LiveMatches.jsx";
 import TournamentDetails from "./pages/TournamentDetails.jsx";
 import ProAm from "./pages/ProAm";
@@ -50,9 +50,10 @@ function App() {
                         <Route path="/announcements" element={<PageWrapper><Announcements /></PageWrapper>} />
                         <Route path="/gallery" element={<PageWrapper><Gallery /></PageWrapper>} />
                         <Route path="/players" element={<PageWrapper><Players /></PageWrapper>} />
-                        <Route path="/help" element={<PageWrapper><Help /></PageWrapper>} />
+
                         <Route path="/tournament-details" element={<PageWrapper><TournamentDetails /></PageWrapper>} />
                         <Route path="/proam" element={<PageWrapper><ProAm /></PageWrapper>} />
+                        <Route path="/donors" element={<PageWrapper><Sponsors /></PageWrapper>} />
                     </Routes>
 
                 </AnimatePresence>

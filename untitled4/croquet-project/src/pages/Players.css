@@ -1,45 +1,155 @@
-/* === Page Layout === */
+/* ===================== PAGE ===================== */
 .players-page {
     padding: 2rem;
-    font-family: 'Poppins', sans-serif;
-    color: white;
-
+    font-family: "Poppins", sans-serif;
     background: var(--usa-gray);
-    /* dark background */
 }
 
-/* === Header === */
+/* ===================== HEADER ===================== */
 .players-header {
     text-align: center;
     margin-bottom: 2rem;
-    padding: 1.5rem;
-    background: #d0d4dd;
-
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(75, 143, 74, 0.25);
-    transition: all 0.3s ease;
+    padding: 1.6rem;
+    background: linear-gradient(135deg, #0a1f44 0%, #123d80 100%);
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(10, 31, 68, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .players-header:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(75, 143, 74, 0.35);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 45px rgba(10, 31, 68, 0.35);
 }
 
 .players-header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-        color: #1e3a8a;
-
-    text-shadow: 0 0 10px rgba(75,143,74,0.4);
+    font-size: 2.3rem;
+    margin-bottom: 0.6rem;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
-/* === Modal Styles === */
-.player-modal {
-    position: fixed;
+
+.players-intro {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ===================== GRID ===================== */
+.players-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.6rem;
+}
+
+/* ===================== PLAYER CARD ===================== */
+.player-card2 {
+    background: white;
+    border-radius: 22px;
+    padding: 1.7rem 1.2rem 1.4rem;
+    box-shadow: 0 12px 28px rgba(10, 31, 68, 0.12);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+/* Accent stripe like US Open */
+.player-card2::before {
+    content: "";
+    position: absolute;
     top: 0;
     left: 0;
+    height: 6px;
+    width: 100%;
+
+}
+
+.player-card2::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+            circle at top left,
+            rgba(31, 79, 216, 0.10),
+            transparent 60%
+    );
+    pointer-events: none;
+}
+
+.player-card2:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(10, 31, 68, 0.2);
+}
+
+/* ===================== AVATAR ===================== */
+.player-avatar {
+    width: 118px;
+    height: 118px;
+    margin: 0.2rem auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 4px solid #1f4fd8;
+    box-shadow: 0 12px 30px rgba(31, 79, 216, 0.22);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    background: #0a1f44;
+}
+
+.player-avatar:hover {
+    transform: scale(1.07);
+    box-shadow: 0 16px 40px rgba(31, 79, 216, 0.35);
+}
+
+.player-avatar img {
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.8);
+    object-fit: cover;
+}
+
+/* ===================== TEXT ===================== */
+.player-name2 {
+    font-size: 1.12rem;
+    font-weight: 800;
+    margin: 0.45rem 0 0.25rem;
+    color: #0a1f44;
+    letter-spacing: 0.3px;
+}
+
+.player-dgrade2 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    margin-bottom: 0.9rem;
+    color: #1f4fd8;
+}
+
+/* ===================== COUNTRY ROW ===================== */
+.player-country {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #5c6675;
+}
+
+.flag-icon {
+    width: 1.55em;
+    height: 1.55em;
+    border-radius: 5px;
+    box-shadow: 0 6px 14px rgba(10, 31, 68, 0.12);
+}
+
+/* ===================== MODAL ===================== */
+.player-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 31, 68, 0.88); /* blue-ish overlay */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,11 +160,11 @@
 }
 
 .player-modal img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transform: scale(0.8);
+    max-width: 92%;
+    max-height: 92%;
+    border-radius: 14px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+    transform: scale(0.85);
     animation: zoomIn 0.3s forwards;
 }
 
@@ -65,12 +175,19 @@
     font-size: 2rem;
     color: #fff;
     cursor: pointer;
+    text-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
-/* === Animations === */
+/* ===================== ANIMATIONS ===================== */
 @keyframes zoomIn {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    from {
+        transform: scale(0.82);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 @keyframes fadeIn {
@@ -78,131 +195,28 @@
     to { opacity: 1; }
 }
 
-.players-intro {
-    font-size: 1.1rem;
-    color: #2980b9;
-}
-
-/* === Country Section === */
-.country-section {
-    margin-bottom: 3rem;
-}
-
-.country-header {
-    margin-bottom: 1rem;
-    border-left: 5px solid   #2980b9;
-    /* green accent */
-    padding-left: 0.75rem;
-}
-
-.country-header h2 {
-    font-size: 1.6rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: white;
-
-}
-
-/* === Players Grid === */
-.players-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 1rem;
-}
-
-/* === Player Card === */
-.player-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    background: #1a1a1a;
-    box-shadow: 0 5px 15px rgba(75,143,74,0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.player-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(75,143,74,0.4);
-}
-
-/* === Player Image === */
-.player-image-container {
-    position: relative;
-}
-
-.player-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
-}
-
-.player-card:hover .player-image {
-    transform: scale(1.05);
-}
-
-/* === Overlay with name/number === */
-.player-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,0.6);
-    color: #eee;
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.player-number {
-    font-weight: bold;
-    font-size: 0.85rem;
-    color: #4B8F4A;
-}
-
-.player-name {
-    margin-top: 0.2rem;
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-/* === Footer === */
-.players-footer {
-    text-align: center;
-    margin-top: 2rem;
-    font-size: 1rem;
-    color: #ccc;
-}
-
-/* ================== RESPONSIVE STYLES ================== */
-@media (max-width: 992px) {
-    .players-container {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    }
-
-    .player-image {
-        height: 180px;
-    }
-
-    .country-header h2 {
-        font-size: 1.4rem;
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1100px) {
+    .players-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (max-width: 768px) {
-    .players-container {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 0.75rem;
+@media (max-width: 850px) {
+    .players-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .players-grid {
+        grid-template-columns: 1fr;
+        padding: 0.4rem;
     }
 
-    .player-image {
-        height: 160px;
+    .player-avatar {
+        width: 135px;
+        height: 135px;
     }
 
     .players-header h1 {
@@ -211,42 +225,5 @@
 
     .players-intro {
         font-size: 1rem;
-    }
-
-    .country-header h2 {
-        font-size: 1.3rem;
-    }
-
-    .player-overlay {
-        font-size: 0.85rem;
-        padding: 0.4rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .players-container {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 0.5rem;
-    }
-
-    .player-image {
-        height: 140px;
-    }
-
-    .players-header h1 {
-        font-size: 1.5rem;
-    }
-
-    .players-intro {
-        font-size: 0.95rem;
-    }
-
-    .country-header h2 {
-        font-size: 1.1rem;
-    }
-
-    .player-overlay {
-        font-size: 0.8rem;
-        padding: 0.3rem;
     }
 }

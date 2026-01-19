@@ -1,0 +1,249 @@
+/* ===================== PAGE ===================== */
+.sponsors-page {
+    padding: 2rem;
+    font-family: sans-serif;
+    background: var(--usa-gray);
+}
+
+/* ===================== HEADER ===================== */
+.sponsors-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.6rem;
+    background: linear-gradient(135deg, #0a1f44 0%, #123d80 100%);
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(10, 31, 68, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsors-header:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 45px rgba(10, 31, 68, 0.35);
+}
+
+.sponsors-title {
+    font-size: 2.3rem;
+    margin-bottom: 0.6rem;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.sponsors-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ===================== SECTIONS ===================== */
+.sponsors-section {
+    max-width: 1200px;
+    margin: 2.6rem auto;
+}
+
+.section-title-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    font-size: 1.9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    position: relative;
+}
+
+/* Underline same American vibe */
+.section-title::after {
+    content: "";
+    display: block;
+    margin: 10px auto 0;
+    width: 120px;
+    height: 4px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #b11226, #ffd700, #1f4fd8);
+}
+
+.section-count {
+    background: rgba(10, 31, 68, 0.08);
+    border: 1px solid rgba(10, 31, 68, 0.15);
+    color: white;
+    font-weight: 900;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+}
+
+/* ===================== GRID ===================== */
+.sponsors-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.6rem;
+}
+
+/* ===================== CARD ===================== */
+.sponsor-card {
+    background:white;
+    border-radius: 22px;
+    padding: 1.7rem 1.2rem 1.4rem;
+    box-shadow: 0 12px 28px rgba(10, 31, 68, 0.12);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+/* top accent stripe (US Open style) */
+.sponsor-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg, #b11226, #ffd700, #1f4fd8);
+}
+
+.sponsor-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+            circle at top left,
+            rgba(31, 79, 216, 0.10),
+            transparent 60%
+    );
+    pointer-events: none;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(10, 31, 68, 0.2);
+}
+
+/* ===================== PHOTO ===================== */
+.sponsor-photo-wrap {
+    width: 118px;
+    height: 118px;
+    margin: 0.2rem auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #1f4fd8;
+    box-shadow: 0 12px 30px rgba(31, 79, 216, 0.22);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: #0a1f44;
+}
+
+.sponsor-photo-wrap:hover {
+    transform: scale(1.07);
+    box-shadow: 0 16px 40px rgba(31, 79, 216, 0.35);
+}
+
+.sponsor-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===================== TEXT ===================== */
+.sponsor-name {
+    font-size: 1.08rem;
+    font-weight: 900;
+    margin: 0.45rem 0 0.4rem;
+    color: #0a1f44;
+    letter-spacing: 0.3px;
+}
+
+.sponsor-note {
+    font-size: 0.92rem;
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+    color: #b11226;
+}
+
+/* ===================== BADGES ===================== */
+.sponsor-badge {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+/* Badge types */
+.sponsor-badge.Platinum {
+    background: rgba(255, 215, 0, 0.17);
+    border: 2px solid rgba(255, 215, 0, 0.55);
+    color: #b88a00;
+}
+
+.sponsor-badge.Gold {
+    background: rgba(255, 191, 0, 0.15);
+    border: 2px solid rgba(255, 191, 0, 0.45);
+    color: #b06d00;
+}
+
+.sponsor-badge.Silver {
+    background: rgba(148, 163, 184, 0.20);
+    border: 2px solid rgba(148, 163, 184, 0.55);
+    color: #334155;
+}
+
+.sponsor-badge.Sponsor {
+    background: rgba(31, 79, 216, 0.12);
+    border: 2px solid rgba(31, 79, 216, 0.35);
+    color: #1f4fd8;
+}
+
+.sponsor-badge.Supporter {
+    background: rgba(10, 31, 68, 0.08);
+    border: 2px solid rgba(10, 31, 68, 0.22);
+    color: #0a1f44;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1100px) {
+    .sponsors-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+    .sponsors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .sponsors-grid {
+        grid-template-columns: 1fr;
+        padding: 0.4rem;
+    }
+
+    .sponsor-photo-wrap {
+        width: 135px;
+        height: 135px;
+    }
+
+    .sponsors-title {
+        font-size: 1.8rem;
+    }
+
+    .sponsors-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.45rem;
+    }
+}

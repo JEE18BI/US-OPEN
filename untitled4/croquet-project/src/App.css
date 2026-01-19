@@ -6,6 +6,7 @@
     --bg-light: #f9f9f9;
     --usa-gray: #09295c;
 
+    --main-font: "Poppins", sans-serif;
 }
 
 * {
@@ -15,11 +16,16 @@
 }
 
 body {
-    font-family: "Arial", sans-serif;
-    background:var(--usa-gray) ;
+    font-family: var(--main-font);
+    background: var(--usa-gray);
     color: var(--text-dark);
     line-height: 1.6;
     padding-bottom: 40px;
+}
+
+/* force same font everywhere (inputs + buttons etc) */
+button, input, select, textarea {
+    font-family: inherit;
 }
 
 /* Utility */
@@ -28,6 +34,7 @@ body {
     margin: 0 auto;
     padding: 1rem;
 }
+
 .app-layout {
     display: flex;
     flex-direction: column;
@@ -35,6 +42,5 @@ body {
 }
 
 .app-content {
-    flex: 1; /* pushes footer down */
-     /* reserve space for sponsor banner */
+    flex: 1;
 }

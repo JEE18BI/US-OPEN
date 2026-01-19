@@ -43,10 +43,11 @@ const Navbar = () => {
                         <Link to="/usopen" className="nav-item" onClick={closeMenu}>Home</Link>
                         <Link to="/tournament-details" className="nav-item" onClick={closeMenu}>US Open Details</Link>
                         <Link to="/proam" className="nav-item" onClick={closeMenu}>ProAm Details</Link>
+                        <Link to="/Donors" className="nav-item" onClick={closeMenu}>Donors</Link>
                         <Link to="/players" className="nav-item" onClick={closeMenu}>Players</Link>
                         <Link to="/blocks" className="nav-item" onClick={closeMenu}>Blocks</Link>
                         <Link to="/matches" className="nav-item" onClick={closeMenu}>Matches</Link>
-                        <Link to="/help" className="nav-item" onClick={closeMenu}>Need Help?</Link>
+
                     </div>
 
                     <div

@@ -14,137 +14,56 @@ export default function Blocks() {
     //         id: 1,
     //         name: "Block A",
     //         players: [
-    //             "Tom Balding",
-    //             "Yasser Aboelnour",
-    //             "Dominic Nunns",
-    //             "Nicolas Denizot",
-    //             "Sandy Hassan",
-    //             "Ahmed Aly",
-    //             "Asrar Elsaaid",
-    //             "Claire Keating",
-    //             "Bill Simmons",
-    //             "Ahmed Elamary",
-    //             "Renee F. Seblatning"
+    //
     //         ]
     //     },
     //     {
     //         id: 2,
     //         name: "Block B",
     //         players: [
-    //             "Reg Bamford",
-    //             "Maram Nabil",
-    //             "Mohamed Walid",
-    //             "Hossam Elatfy",
-    //             "Hossam El-Bibany",
-    //             "Yousif Elswaify",
-    //             "Ignacio Gross",
-    //             "Adam Peck",
-    //             "Seham Hassan",
-    //             "Aly Elzainy",
-    //             "Leticia Gonzalez"
+    //
     //         ]
     //     },
     //     {
     //         id: 3,
     //         name: "Block C",
     //         players: [
-    //             "Hamy Erian",
-    //             "Ayman Nagah",
-    //             "Omar Fahmy",
-    //             "Juan Ojeda",
-    //             "Alison Sharpe",
-    //             "Hazem Zaghlol",
-    //             "Sherif Aboosbaa",
-    //             "Aly Radowan",
-    //             "Jill Sullivan",
-    //             "Rana ElAlami",
-    //             "Khaled Kholief"
+    //
     //         ]
     //     },
     //     {
     //         id: 4,
     //         name: "Block D",
     //         players: [
-    //             "Ahmed Nasr",
-    //             "Yousif Yasser",
-    //             "Sherif Abdel Wahab",
-    //             "Ahmed Eltawiel",
-    //             "Hanan Rashad",
-    //             "Mohamed Aboelnour",
-    //             "Miroslav Havlik",
-    //             "Ana Sanchez",
-    //             "Manuel Marcos Fal",
-    //             "David Openshaw",
-    //             "Sandy Tawa"
+    //
     //         ]
     //     },
     //     {
     //         id: 5,
     //         name: "Block E",
     //         players: [
-    //             "Mohamed Nasr",
-    //             "Kyle Maloof",
-    //             "Hazem Elsayed",
-    //             "Darin Guffey",
-    //             "Sara Hany",
-    //             "Amr Hamdy",
-    //             "Ghasan Saba",
-    //             "Ashley Deakin",
-    //             "Sarah Persons",
-    //             "Wael Aabas",
-    //             "Manuel Antonio"
+    //
     //         ]
     //     },
     //     {
     //         id: 6,
     //         name: "Block F",
     //         players: [
-    //             "Yasser Sayed",
-    //             "Karim Ghamry",
-    //             "Nour Aly",
-    //             "Dina Saad",
-    //             "Mostafa Samir",
-    //             "May Aly Maher",
-    //             "Samy Ahmed",
-    //             "Hesham Zoghby",
-    //             "Pauline Markwell",
-    //             "Gabriella Maloof",
-    //             "Jacobo Garay"
+    //
     //         ]
     //     },
     //     {
     //         id: 7,
     //         name: "Block G",
     //         players: [
-    //             "Khaled Kamel",
-    //             "Mostafa Nezar",
-    //             "Mostafa Eissa",
-    //             "Ahmed Abdelshay",
-    //             "Ahmed Kamal",
-    //             "Saif Hatem",
-    //             "Nazmi Nazmi",
-    //             "Khaled Hazem",
-    //             "Georgina Carnegie",
-    //             "Elsaaid Mahmoud",
-    //             "Nour Abdelall"
+    //
     //         ]
     //     },
     //     {
     //         id: 8,
     //         name: "Block H",
     //         players: [
-    //             "Mohamed Taha",
-    //             "Fawzy Helmy",
-    //             "Tamer Hatata",
-    //             "Ahab Abdel Wahab",
-    //             "Rania Khourshed",
-    //             "Mohammad Kamal",
-    //             "Mary McMahon",
-    //             "Evan Newell",
-    //             "Maria Calero Garrido",
-    //             "Jose Perez",
-    //             "Ghada Azmy",
-    //             "Len Canavan"
+    //
     //         ]
     //     }
     // ];

@@ -1,5 +1,5 @@
 import React from "react";
-import './ProAm.css';
+import "./ProAm.css";
 
 export default function ProAm() {
     const proAmPairs = [
@@ -29,9 +29,91 @@ export default function ProAm() {
         { am: "Trula Myers", pro: "Stephen Morgan", grade: 3764 },
     ];
 
+    // ✅ helper to map names → photos (add yours here)
+    const getPhoto = (name) => {
+        const map = {
+            // ===== PROAM PAIRS (AM + PRO) =====
+            "Alex Galasso": "/sponsors/alexgalasso.jpg",
+            "Adam Barr": "/players/adambarr.jpg",
+
+            "Alise Scanlon": "/sponsors/alisescanlon.jpg",
+            "Omar Fahmy": "/players/omarfahmy.jpg",
+
+            "Bill Hinkebein": "/sponsors/bill.png",
+            "Brian Lozano": "/players/brianlozano.jpg",
+
+            "Bill Kuhn": "/sponsors/billkuhn.jpg",
+            "Stephen Mulliner": "/players/stephenmulliner.jpg",
+
+            "Bill Simmons": "/sponsors/billsimmons.jpg",
+            "Ahmed Elmahdy": "/players/ahmedelmahdy.jpg",
+
+            "Bruce Hindin": "/sponsors/brucehindin.jpg",
+            "Kent Lovvorn": "/players/kentlovvorn.jpg",
+
+            "Caryl Firth": "/sponsors/carylfirth.jpg",
+            "Seif Elyamany": "/players/seifelyamany.jpg",
+
+            "David Kepner": "/sponsors/davidkepner.jpg",
+            "Reg Bamford": "/players/regbamford.jpg",
+
+            "David McCoy": "/sponsors/davidmccoy.jpg",
+            "Ahab Abdelwahab": "/players/ahababdelwahab.jpg",
+
+            "Diane Wren": "/sponsors/dianewren.jpg",
+            "Mohamed Karem": "/players/mohamedkarem.jpg",
+
+            "Gay Cinque": "/sponsors/gaycinque.jpg",
+            "Danny Huneycutt": "/players/dannyhuneycutt.jpg",
+
+            "Jay Carey": "/sponsors/jaycarey.jpg",
+            "Zack Watson": "/players/zackwatson.jpg",
+
+            "John Curington": "/sponsors/johncurington.jpg",
+            "Juan Ojeda": "/players/juanojeda.jpg",
+
+            "John Dillon": "/sponsors/johndillon.jpg",
+            "Greg Fletcher": "/players/gregfletcher.jpg",
+
+            "John O Brown": "/sponsors/johnobrown.jpg",
+            "Thomas Balding": "/players/thomasbalding.jpg",
+
+            "Karen Heckman": "/sponsors/karenheckman.jpg",
+            "Edmund J Fordyce": "/players/edmundfordyce.jpg",
+
+            "Kit Pannill": "/sponsors/kitpannill.jpg",
+            "Soha Moustafa": "/players/sohamoustafa.jpg",
+
+            "Madeleine d'Ambrosio": "/sponsors/madeleine.jpg",
+            "Kyle Maloof": "/players/kylemaloof.jpg",
+
+            "Mark Ski": "/sponsors/markski.jpg",
+            "Matthew Essick": "/players/matthewessick.jpg",
+
+            "Mary Galasso": "/sponsors/marygalasso.jpg",
+            "Tamer Hatata": "/players/tamerhatata.jpg",
+
+            "Priscilla Flowers": "/sponsors/priscillaflowers.jpg",
+            "Darin Guffey": "/players/daringuffey.jpg",
+
+            "Simon Dentchev": "/sponsors/simondentchev.jpg",
+            "Macey White": "/players/maceywhite.jpg",
+
+            "Trevor Head": "/sponsors/trevorhead.jpg",
+            "Jana Elsaeed": "/players/janaelsaeed.jpg",
+
+            "Trula Myers": "/sponsors/trulamyers.jpg",
+            "Stephen Morgan": "/players/stephenmorgan.jpg",
+        };
+
+        return map[name] || "/placeholder.jpg";
+    };
+
+
     return (
         <section className="proam-container">
-            <h2 className="proam-title"> ProAm Doubles Fundraiser – 2026</h2>
+            <h2 className="proam-title">ProAm Doubles Fundraiser – 2026</h2>
+
             <div className="doubles-cta">
                 <h3
                     className="doubles"
@@ -45,7 +127,6 @@ export default function ProAm() {
                 </h3>
             </div>
 
-
             <div className="proam-card">
                 <ul>
                     <li>Date: Monday, February 9, 2026</li>
@@ -58,30 +139,44 @@ export default function ProAm() {
                 </ul>
             </div>
 
+            {/* ✅ Doubles Section */}
             <div id="hotel-info" className="hotel-info">
                 <h3>Doubles List</h3>
-                <div className="proam-table-wrapper">
-                    <table className="proam-table">
-                        <thead>
-                        <tr>
-                            <th>Am</th>
-                            <th>Pro</th>
-                            <th>Combined D-Grade</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {proAmPairs.map((pair, index) => (
-                            <tr key={index}>
-                                <td data-label="Am">{pair.am}</td>
-                                <td data-label="Pro">{pair.pro}</td>
-                                <td data-label="Combined D-Grade">{pair.grade}</td>
-                            </tr>
-                        ))}
-                        </tbody>
-                    </table>
+
+                <div className="proam-pairs-grid">
+                    {proAmPairs.map((pair, index) => (
+                        <div key={index} className="proam-pair-card">
+                            <div className="proam-pair-top">
+                                {/* AM */}
+                                <div className="proam-person">
+                                    <div className="proam-avatar">
+                                        <img src={getPhoto(pair.am)} alt={pair.am} />
+                                    </div>
+                                    <p className="proam-role">AM</p>
+                                    <p className="proam-name">{pair.am}</p>
+                                </div>
+
+                                {/* VS ICON */}
+                                <div className="proam-divider">
+                                    <span>×</span>
+                                </div>
+
+                                {/* PRO */}
+                                <div className="proam-person">
+                                    <div className="proam-avatar">
+                                        <img src={getPhoto(pair.pro)} alt={pair.pro} />
+                                    </div>
+                                    <p className="proam-role">PRO</p>
+                                    <p className="proam-name">{pair.pro}</p>
+                                </div>
+                            </div>
+
+                            <div className="proam-grade-badge">
+                                Combined D-Grade: <strong>{pair.grade}</strong>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-
-
             </div>
         </section>
     );
