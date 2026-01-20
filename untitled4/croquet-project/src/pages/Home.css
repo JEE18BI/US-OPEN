@@ -632,7 +632,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 0.3rem !important;   /* ✅ real spacing */
+        gap: 0;  /* ✅ real spacing */
         margin: 0 !important;
         padding: 0 !important;
     }
@@ -644,9 +644,9 @@
     }
 
     .hero-logo-final {
-        height: 150px !important; /* ✅ better on phone */
+        height: 190px !important; /* ✅ better on phone */
         width: auto;
-        display: block;
+
     }
 }
 
