@@ -610,13 +610,44 @@
     .hero-subtitle-final {
         font-size: 1rem;
     }
-    #right-logo{
-        margin-right: 70px;
-        margin-left: 0;
+    .hero-logos-final {
+        display: flex;
+        justify-content: center;   /* NOT space-between */
+        align-items: center;
+        gap: 0.4rem !important;    /* reduce spacing */
+        margin: 0 !important;
+        padding: 0 !important;
     }
-    #left-logo{
-        margin-left: 70px;
-        margin-right: 0;
+
+
+}
+@media (max-width: 900px) {
+    #right-logo,
+    #left-logo {
+        margin: 0 !important;      /* ✅ kills the gap completely */
     }
 }
+@media (max-width: 900px) {
+    .hero-logos-final {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3rem !important;   /* ✅ real spacing */
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* ✅ remove forced spacing */
+    #right-logo,
+    #left-logo {
+        margin: 0 !important;
+    }
+
+    .hero-logo-final {
+        height: 150px !important; /* ✅ better on phone */
+        width: auto;
+        display: block;
+    }
+}
+
 
