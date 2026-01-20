@@ -33,11 +33,13 @@ const Home = () => {
                             src="/US_OPEN_GC_2026-Photoroom.png"
                             alt="US Open GC 2026 Logo"
                             className="hero-logo-final"
+                            id="left-logo"
                         />
                         <img
                             src="/US_OPEN_GC_ProAm2026-Photoroom.png"
                             alt="US Open GC ProAm 2026 Logo"
                             className="hero-logo-final"
+                            id="right-logo"
                         />
                     </div>
 

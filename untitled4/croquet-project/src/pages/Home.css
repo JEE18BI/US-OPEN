@@ -610,4 +610,13 @@
     .hero-subtitle-final {
         font-size: 1rem;
     }
+    #right-logo{
+        margin-right: 70px;
+        margin-left: 0;
+    }
+    #left-logo{
+        margin-left: 70px;
+        margin-right: 0;
+    }
 }
+
