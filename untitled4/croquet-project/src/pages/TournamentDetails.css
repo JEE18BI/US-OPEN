@@ -94,7 +94,22 @@
     color: black;
     font-weight: 500;
 }
-
+.details-paragraph li{
+    padding: 0.6rem 0;
+    position: relative;
+ padding-left: 2rem;
+    line-height: 1.6;
+    color: white;
+    font-weight: 500;
+}
+.details-paragraph li::before{
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #3498db; /* patriotic blue check */
+    font-weight: bold;
+    font-size: 1.1rem;
+}
 .tournament-card li::before {
     content: '✔';
     position: absolute;
@@ -103,6 +118,23 @@
     font-weight: bold;
     font-size: 1.1rem;
 }
+.details-paragraph li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at center, rgba(231, 76, 60, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+.details-paragraph ul {
+    list-style: none;   /* ✅ removes default bullet */
+    padding: 0;
+    margin: 0;
+}
+
 
 /* Decorative elements */
 .tournament-card::after {
@@ -173,18 +205,21 @@
 }
 
 .details-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 900;
     color: #ffd700;
     margin-bottom: 0.6rem;
 }
 .details-paragraph {
-    font-size: 1.25rem;
 
-    font-weight: 600;
-    line-height: 1.7;
-    color: white;
+
+
     margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 650;
+    line-height: 1.6;
+    opacity: 0.92;
+
 
 }
 
@@ -197,6 +232,12 @@
     max-width: 1100px;
     border-top: 6px solid #1f4fd8;
     color: white;
+
+    font-size: 1.25rem;
+    font-weight: 650;
+    line-height: 1.6;
+    opacity: 0.92;
+
 }
 
 .details-grid {
@@ -205,6 +246,12 @@
     gap: 1.3rem;
     max-width: 1100px;
     margin: 1.4rem auto 2rem;
+    font-size: 1.25rem;
+    font-weight: 650;
+    line-height: 1.6;
+    opacity: 0.92;
+
+
 }
 
 .details-box {
@@ -214,6 +261,11 @@
     box-shadow: 0 12px 28px rgba(10, 31, 68, 0.12);
     border-top: 5px solid rgba(31, 79, 216, 0.7);
     color:white;
+    font-size: 1.25rem;
+    font-weight: 650;
+    line-height: 1.6;
+    opacity: 0.92;
+
 }
 
 /* ===================== SCHEDULE CARD ===================== */
@@ -225,6 +277,7 @@
     border-radius: 22px;
     box-shadow: 0 18px 45px rgba(10, 31, 68, 0.25);
     color: white;
+
 }
 
 .schedule-card .details-title {
@@ -238,6 +291,7 @@
     padding: 1.4rem 1.2rem;
     margin-bottom: 1.2rem;
     border: 1px solid rgba(255, 255, 255, 0.18);
+
 }
 
 .schedule-day h3 {
@@ -293,4 +347,13 @@
     .schedule-day li {
         font-size: 0.95rem;
     }
+}
+.add{
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }

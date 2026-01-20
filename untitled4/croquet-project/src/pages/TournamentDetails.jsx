@@ -26,13 +26,14 @@ export default function TournamentDetails() {
 
 
                 <div className="details-card">
-                    <h3 className="details-subtitle">Welcome Ceremony, Player Meeting & Practice</h3>
-                    <p className="details-paragraph">
-                        The welcome ceremony will be on <b>Sunday, February 8, 2026</b> in front of the National Croquet Center
-                        clubhouse lawn side. Players can practice starting at <b>12:00 PM</b> on designated lawns.
-                        Players should assemble on the front right side of the veranda to organize for the opening ceremony.
-                        A player meeting to distribute schedules and shirts will follow the ceremony.
-                    </p>
+                    <h3 className="details-subtitle"><b>Welcome Ceremony, Player Meeting & Practice</b></h3>
+                    <div className="details-paragraph"> <ul>
+                        <li>The welcome ceremony will be on <b>Sunday, February 8, 2026</b> in front of the National Croquet Center
+                        clubhouse lawn side.</li>
+                        <li>Players can practice starting at <b>12:00 PM</b> on designated lawns.</li>
+                        <li>Players should assemble on the front right side of the veranda to organize for the opening ceremony.</li>
+                        <li>A player meeting to distribute schedules and shirts will follow the ceremony.</li>
+                    </ul> </div>
                 </div>
 
                 <div className="details-grid">
@@ -123,7 +124,7 @@ export default function TournamentDetails() {
                     </div>
                 </div>
             </section>
-
+            <h2 className="add">Additional Details</h2>
 
             <div className="tournament-grid">
                 {/* OVERVIEW */}
