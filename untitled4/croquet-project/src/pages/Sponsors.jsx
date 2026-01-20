@@ -5,7 +5,7 @@ export default function Sponsors() {
     const sponsorsData = [
         // ===== PLATINUM =====
         { name: "Alice (Kit) Pannill", type: "Platinum", photo: "/sponsors/kitpannill.jpg" },
-        { name: "Billy (Bill) J Simmons", type: "Platinum", photo: "/sponsors/billsimmons.jpg" },
+        { name: "Billy (Bill) J Simmons", type: "Platinum", photo: "/sponsors/billsimmons.jpg",note:"2021 GC USCA GC Club Teams Championship finalist" },
         { name: "Constance (Kim) P Beaty", type: "Platinum", photo: "/sponsors/kimbeaty.jpg" },
         { name: "Dave Goddard", type: "Platinum", photo: "/sponsors/davegoddard.jpg" },
         { name: "David Kepner", type: "Platinum", photo: "/sponsors/davidkepner.jpg" },
@@ -15,7 +15,7 @@ export default function Sponsors() {
         { name: "William (Bill) Hinkebein", type: "Platinum", photo: "/sponsors/bill.png" },
 
         // ===== GOLD =====
-        { name: "Alex T Galasso", type: "Gold", photo: "/sponsors/alexgalasso.jpg" },
+        { name: "Alex T Galasso", type: "Gold", photo: "/sponsors/alexgalasso.jpg",note:"2025 GC Seniors Champion" },
         { name: "Alice (Alise) Scanlon", type: "Gold", photo: "/sponsors/alisescanlon.jpg" },
         { name: "Bruce Hindin", type: "Gold", photo: "/sponsors/brucehindin.jpg" },
         { name: "Caryl Firth", type: "Gold", photo: "/sponsors/carylfirth.jpg" },

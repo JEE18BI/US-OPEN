@@ -7,16 +7,123 @@ export default function TournamentDetails() {
 
     return (
         <section className="tournament-container">
-            <h2 className="tournament-title">
-                 2nd Annual US Open Golf Croquet – 2026
-            </h2>
-            <div className="doubles-cta">
+            {/* ===================== NEW TOURNAMENT DETAILS (TOP) ===================== */}
+            <section className="tournament-details-section">
+                <h2 className="tournament-title">
+                    2nd Annual US Open Golf Croquet – 2026
+                </h2>
 
-                <Link to="/players" className="doubles">
-                    Check Players
-                </Link>
+                <div className="doubles-cta">
 
-        </div>
+
+                    <Link to="/players" className="doubles">
+                        Check Players
+                    </Link>
+
+                </div>
+                <h2 className="details-title">Tournament Details</h2>
+
+
+
+                <div className="details-card">
+                    <h3 className="details-subtitle">Welcome Ceremony, Player Meeting & Practice</h3>
+                    <p className="details-paragraph">
+                        The welcome ceremony will be on <b>Sunday, February 8, 2026</b> in front of the National Croquet Center
+                        clubhouse lawn side. Players can practice starting at <b>12:00 PM</b> on designated lawns.
+                        Players should assemble on the front right side of the veranda to organize for the opening ceremony.
+                        A player meeting to distribute schedules and shirts will follow the ceremony.
+                    </p>
+                </div>
+
+                <div className="details-grid">
+                    <div className="details-box">
+                        <h3 className="details-subtitle">Lunch</h3>
+                        <p className="details-paragraph">
+                            A lunch buffet will be provided each day in the NCC clubhouse dining room.
+                        </p>
+                    </div>
+
+                    <div className="details-box">
+                        <h3 className="details-subtitle">Social</h3>
+                        <p className="details-paragraph">
+                            Monday, February 9 there will be a reception and dinner for the ProAm donors,
+                            their doubles partners and guests.
+                        </p>
+                    </div>
+
+                    <div className="details-box">
+                        <h3 className="details-subtitle">Balls & Hoops</h3>
+                        <p className="details-paragraph">
+                            Balls will be <b>Invictus primary and secondary colors</b>. Hoops will be <b>Quadways or Superhoops</b>.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="schedule-card">
+                    <h2 className="details-title">Main Event Schedule</h2>
+
+                    <div className="schedule-day">
+                        <h3>Sunday, February 8, 2026 (Practice Day)</h3>
+                        <ul>
+                            <li><b>12:00 PM – 2:45 PM:</b> Practice on designated lawns</li>
+                            <li><b>3:00 PM:</b> Opening Ceremony</li>
+                            <li><b>4:00 PM:</b> Player’s Meeting</li>
+                            <li><b>5:00 PM:</b> National Croquet Center closes for a private event</li>
+                        </ul>
+                    </div>
+
+                    <div className="schedule-day">
+                        <h3>Monday, February 9, 2026</h3>
+                        <ul>
+                            <li><b>8:30 AM:</b> ProAm doubles tournament begins</li>
+                            <li>
+                                <b>8:30 AM:</b> Optional Manager’s singles Swiss tournament and/or practice begins
+                                at the Beach Club in Palm Beach
+                            </li>
+                            <li><b>5:00 PM:</b> ProAm players and guests cocktail reception in NCC clubhouse bar</li>
+                            <li><b>6:15 PM:</b> ProAm awards in dining room</li>
+                            <li><b>6:30 PM:</b> ProAm players and guests assigned seats for dinner</li>
+                        </ul>
+                    </div>
+
+                    <div className="schedule-day">
+                        <h3>Tuesday, February 10, 2026</h3>
+                        <ul>
+                            <li>
+                                <b>8:00 AM:</b> Block play begins (2/10–2/11) possible play under lights lawns 2 and 3 if needed
+                            </li>
+                            <li>
+                                <b>11:30 AM:</b> Player buffet daily provided (2/10–2/14)
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="schedule-day">
+                        <h3>Thursday, February 12, 2026</h3>
+                        <ul>
+                            <li>
+                                <b>8:00 AM:</b> Knock-Out Rounds and Plate begins with possible play under the lights on lawns 2 and 3 if needed
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="schedule-day">
+                        <h3>Friday, February 13, 2026</h3>
+                        <ul>
+                            <li><b>8:00 AM:</b> Semi-finals, Bowl, Shield, Plate</li>
+                        </ul>
+                    </div>
+
+                    <div className="schedule-day">
+                        <h3>Saturday, February 14, 2026</h3>
+                        <ul>
+                            <li><b>8:00 AM:</b> Championship Finals, Bowl Final, Plate Final</li>
+                            <li><b>Awards and closing ceremony</b></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
 
             <div className="tournament-grid">
                 {/* OVERVIEW */}
@@ -81,6 +188,10 @@ export default function TournamentDetails() {
                 {/* REGISTRATION */}
 
             </div>
+
+
         </section>
+
+
     );
 }
