@@ -84,6 +84,26 @@ const Home = () => {
                             <span className="hero-link-title">Youtube</span>
                             <span className="hero-link-sub">Live streaming</span>
                         </a>
+                        <a
+                            href="https://www.croquetamerica.com/content.aspx?page_id=4091&club_id=962311&item_id=2477589"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hero-link-card"
+                        >
+                            <span className="hero-link-title">USCA US Open GC ProAm Calendar page</span>
+                            <span className="hero-link-sub">Croquet America</span>
+
+                        </a>
+                        <a
+                            href="https://www.croquetamerica.com/content.aspx?page_id=4091&club_id=962311&item_id=2477592 "
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hero-link-card"
+                        >
+                            <span className="hero-link-title">USCA US Open GC Calendar page</span>
+                            <span className="hero-link-sub">Croquet America</span>
+
+                        </a>
                     </div>
 
 

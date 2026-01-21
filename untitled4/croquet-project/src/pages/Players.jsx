@@ -199,6 +199,13 @@ export const playersData = [
                     "GC World Champion 1997, 2000",
                 ],
             },
+            {id : 10,
+            name :"Fawzy Helmy",
+                dgrade: 2525,
+                photo: "/players/fawzyhelmy.jpg",
+                highlights: [],
+            }
+
         ],
     },
 

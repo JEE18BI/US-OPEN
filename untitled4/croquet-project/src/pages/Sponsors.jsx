@@ -6,7 +6,7 @@ export default function Sponsors() {
         // ===== PLATINUM =====
         { name: "Alice (Kit) Pannill", type: "Platinum", photo: "/sponsors/kitpannill.jpg" },
         { name: "Billy (Bill) J Simmons", type: "Platinum", photo: "/sponsors/billsimmons.jpg",note:"2021 GC USCA GC Club Teams Championship finalist" },
-        { name: "Constance (Kim) P Beaty", type: "Platinum", photo: "/sponsors/kimbeaty.jpg" },
+        { name: "Kim Beaty", type: "Platinum", photo: "/sponsors/kimbeaty.jpg" },
         { name: "Dave Goddard", type: "Platinum", photo: "/sponsors/davegoddard.jpg" },
         { name: "David Kepner", type: "Platinum", photo: "/sponsors/davidkepner.jpg" },
         { name: "Gay Cinque", type: "Platinum", photo: "/sponsors/gaycinque.jpg" },
