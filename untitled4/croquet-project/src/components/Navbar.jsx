@@ -21,7 +21,7 @@ const Navbar = () => {
                             className="nav-logo-img"
                         />
                         <img
-                            src="/CFA.jpg"
+                            src="/CFAA.png"
                             alt="Main Logo"
                             className="nav-logo-img"
                         />
