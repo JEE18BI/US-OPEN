@@ -20,6 +20,12 @@ const Navbar = () => {
                             alt="Main Logo"
                             className="nav-logo-img"
                         />
+                        <img
+                            src="/CFA.jpg"
+                            alt="Main Logo"
+                            className="nav-logo-img"
+                        />
+
 
                         <span className="nav-logo-text">
                 US Open 2026
